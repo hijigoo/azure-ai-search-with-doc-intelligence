@@ -9,7 +9,7 @@
 3. [Azure Blob Storage 생성](#3-azure-blob-storage-생성)
 4. [Azure Document Intelligence 생성](#4-azure-document-intelligence-생성)
 5. [Azure AI Search 생성](#5-azure-ai-search-생성)
-6. [리소스 연결 정보 확인](#6-리소스-연결-정보-확인)
+6. [Microsoft Foundry 생성](#6-microsoft-foundry-생성)
 
 ---
 
@@ -31,10 +31,11 @@
 | **Storage Account** | 문서 파일 저장 (Blob Storage) |
 | **Document Intelligence** | 문서에서 텍스트 및 구조 추출 |
 | **AI Search** | 추출된 데이터 인덱싱 및 검색 |
+| **Microsoft Foundry** | AI 모델 배포 및 관리 |
 
 ---
 
-## 2. Azure 리소스 그룹 생성re
+## 2. Azure 리소스 그룹 생성
 
 리소스 그룹은 Azure 리소스들을 논리적으로 그룹화하는 컨테이너입니다.
 
@@ -234,136 +235,106 @@ AI Search(구 Cognitive Search)는 전문 검색 서비스로, Document Intellig
 
 ---
 
-## 6. Microsoft Entra ID 기반 리소스 연동 설정
+## 6. Microsoft Foundry 생성
 
-Key 기반 인증 대신 **Microsoft Entra ID (구 Azure AD)** 기반의 역할 기반 접근 제어(RBAC)를 사용하여 보안을 강화합니다.
+Microsoft Foundry는 AI 모델을 배포하고 관리하는 통합 플랫폼입니다. 문서 처리 결과를 AI 모델로 분석하거나, 검색 결과를 증강하는 데 사용합니다.
 
-> 🔐 **보안 권장사항**: Entra ID 기반 인증은 키 유출 위험이 없고, 세밀한 권한 제어가 가능하며, 감사 로그를 통한 추적이 용이합니다.
+### 단계별 가이드
 
-### 6.1 AI Search Managed Identity 활성화
+#### 6.1 Microsoft Foundry 생성
 
-AI Search가 다른 Azure 리소스에 안전하게 접근할 수 있도록 System Managed Identity를 활성화합니다.
+1. **Microsoft Foundry 메뉴 이동**
+   - 상단 검색창에 "Microsoft Foundry" 입력
+   - "Microsoft Foundry" 클릭
 
-1. **AI Search 리소스로 이동**
-2. **왼쪽 메뉴 > Settings > Identity** 클릭
-3. **System assigned 탭에서 Status를 `On`으로 변경**
-4. **Save 클릭**
+    ![Microsoft Foundry 검색](./images/01-19-ms-foundry-search.png)
 
-   ![AI Search Identity 설정](./images/01-19-ai-search-identity.png)
+2. **새 Foundry 생성**
+   - `Create a Foundry Resource` 버튼 클릭
 
-5. **Object ID 메모** (역할 할당 시 사용)
+    ![Microsoft Foundry 생성](./images/01-20-ms-foundry-create.png)
 
-   > 💡 **참고**: Save 후 Object ID가 생성됩니다. 이 ID가 AI Search의 고유 식별자입니다.
+3. **기본 정보 입력 (Basics 탭)**
 
-### 6.2 Storage Account에 역할 할당
+   | 필드 | 값 | 설명 |
+   |------|-----|------|
+   | Subscription | 본인 구독 선택 | |
+   | Resource group | `rg-doc-intelligence-lab` | 동일한 리소스 그룹 사용 |
+   | Region | `East US 2` | 모델 가용성 확인 필요 |
+   | Name | `ms-foundry-lab-[고유번호]` | Foundry 이름 |
 
-AI Search가 Blob Storage의 문서를 읽을 수 있도록 역할을 할당합니다.
+   > 💡 **팁**: Region은 사용하려는 AI 모델(GPT-4o, text-embedding-3 등)이 지원되는 지역을 선택하세요.
 
-1. **Storage Account로 이동**
-2. **왼쪽 메뉴 > Access Control (IAM)** 클릭
-3. **`+ Add` > `Add role assignment`** 클릭
+   ![Microsoft Foundry 기본 설정](./images/01-21-ms-foundry-basics.png)
 
-   ![Storage IAM 추가](./images/01-20-storage-iam-add.png)
+4. **검토 및 생성**
+   - `Review + create` 클릭
+   - 검증 통과 후 `Create` 클릭
+   - 배포 완료까지 약 3-5분 소요
 
-4. **Role 탭에서 역할 선택**
-   - 검색창에 "Storage Blob Data Reader" 입력
-   - `Storage Blob Data Reader` 선택
-   - `Next` 클릭
+   ![Microsoft Foundry 생성 완료](./images/01-23-ms-foundry-created.png)
 
-   | 역할 | 권한 |
+#### 6.2 Microsoft Foundry Portal 접속
+
+1. **생성된 리소스로 이동**
+   - 배포 완료 후 `Go to resource` 버튼 클릭
+
+2. **Foundry Portal 이동**
+   - Overview 페이지에서 `Go to Foundry portal` 버튼 클릭
+
+   ![Go to Foundry Portal](./images/01-25-ms-foundry-go-to-portal.png)
+
+
+#### 6.3 AI 모델 배포
+
+문서 처리 및 검색 증강에 필요한 AI 모델을 배포합니다.
+
+1. **Discover + Models 이동**
+   - 위 메뉴에서 `Models + endpoints` 클릭
+
+2. **새 모델 배포**
+   - `+ Deploy model` 버튼 클릭
+   - `Deploy base model` 선택
+
+   ![Deploy model 버튼](./images/01-29-ms-foundry-deploy-button.png)
+
+3. **GPT-4o 모델 배포** (텍스트 생성용)
+   
+   | 필드 | 값 | 설명 |
+   |------|-----|------|
+   | Model | `gpt-4o` | 텍스트 생성 및 분석용 |
+   | Deployment name | `gpt-4o` | 배포 이름 (기본값 사용) |
+   | Deployment type | `Global Standard` | 비용 효율적인 옵션 |
+
+   - `Deploy` 클릭
+
+   ![GPT-4o 배포 설정](./images/01-30-ms-foundry-gpt4o-deploy.png)
+
+4. **text-embedding-3-large 모델 배포** (벡터 검색용)
+   
+   - 다시 `+ Deploy model` > `Deploy base model` 클릭
+   
+   | 필드 | 값 | 설명 |
+   |------|-----|------|
+   | Model | `text-embedding-3-large` | 벡터 임베딩 생성용 |
+   | Deployment name | `text-embedding-3-large` | 배포 이름 (기본값 사용) |
+   | Deployment type | `Global Standard` | 비용 효율적인 옵션 |
+
+   - `Deploy` 클릭
+
+   ![Embedding 모델 배포 설정](./images/01-31-ms-foundry-embedding-deploy.png)
+
+5. **배포 완료 확인**
+   - `Models + endpoints` 목록에서 두 모델이 `Succeeded` 상태인지 확인
+
+   | 모델 | 용도 |
    |------|------|
-   | Storage Blob Data Reader | Blob 데이터 읽기 전용 |
-   | Storage Blob Data Contributor | Blob 데이터 읽기/쓰기 |
+   | `gpt-4o` | 문서 요약, Q&A, 텍스트 생성 |
+   | `text-embedding-3-large` | 의미 기반 벡터 검색 |
 
-   ![Storage 역할 선택](./images/01-21-storage-role-select.png)
+   ![모델 배포 완료](./images/01-32-ms-foundry-models-deployed.png)
 
-5. **Members 탭에서 멤버 추가**
-   - `Assign access to`: **Managed identity** 선택
-   - `+ Select members` 클릭
-   - `Managed identity` 드롭다운에서 **Search service** 선택
-   - 앞서 생성한 AI Search 서비스 선택
-   - `Select` 클릭
-
-   ![Storage 멤버 선택](./images/01-22-storage-member-select.png)
-
-6. **Review + assign 클릭하여 역할 할당 완료**
-
-   ![Storage 역할 할당 완료](./images/01-23-storage-role-assigned.png)
-
-### 6.3 Document Intelligence에 역할 할당
-
-AI Search가 Document Intelligence를 사용할 수 있도록 역할을 할당합니다.
-
-1. **Document Intelligence 리소스로 이동**
-2. **왼쪽 메뉴 > Access Control (IAM)** 클릭
-3. **`+ Add` > `Add role assignment`** 클릭
-
-4. **Role 탭에서 역할 선택**
-   - 검색창에 "Cognitive Services User" 입력
-   - `Cognitive Services User` 선택
-   - `Next` 클릭
-
-   | 역할 | 권한 |
-   |------|------|
-   | Cognitive Services User | API 호출 권한 |
-   | Cognitive Services Contributor | 리소스 관리 + API 호출 |
-
-   ![Document Intelligence 역할 선택](./images/01-24-doc-intel-role-select.png)
-
-5. **Members 탭에서 멤버 추가**
-   - `Assign access to`: **Managed identity** 선택
-   - `+ Select members` 클릭
-   - `Managed identity` 드롭다운에서 **Search service** 선택
-   - 앞서 생성한 AI Search 서비스 선택
-   - `Select` 클릭
-
-   ![Document Intelligence 멤버 선택](./images/01-25-doc-intel-member-select.png)
-
-6. **Review + assign 클릭하여 역할 할당 완료**
-
-### 6.4 엔드포인트 정보 확인
-
-Entra ID 인증에서는 키 대신 엔드포인트 URL만 필요합니다.
-
-#### Storage Account
-1. **Storage Account > Overview**에서 확인
-2. **다음 정보 메모**
-
-   | 항목 | 예시 |
-   |------|------|
-   | Blob service endpoint | `https://stdocintellab0115.blob.core.windows.net/` |
-
-#### Document Intelligence
-1. **Document Intelligence > Overview**에서 확인
-2. **다음 정보 메모**
-
-   | 항목 | 예시 |
-   |------|------|
-   | Endpoint | `https://doc-intel-lab-0115.cognitiveservices.azure.com/` |
-
-#### AI Search
-1. **AI Search > Overview**에서 확인
-2. **다음 정보 메모**
-
-   | 항목 | 예시 |
-   |------|------|
-   | URL | `https://search-doc-lab-0115.search.windows.net` |
-
-   ![엔드포인트 확인](./images/01-26-endpoints-overview.png)
-
-### 6.5 역할 할당 확인
-
-각 리소스에서 역할이 올바르게 할당되었는지 확인합니다.
-
-1. **각 리소스의 Access Control (IAM) > Role assignments 탭** 클릭
-2. **AI Search의 Managed Identity가 목록에 있는지 확인**
-
-   | 리소스 | 할당된 역할 | 대상 |
-   |--------|------------|------|
-   | Storage Account | Storage Blob Data Reader | AI Search |
-   | Document Intelligence | Cognitive Services User | AI Search |
-
-   > ⏱️ **참고**: 역할 할당이 적용되기까지 최대 5분 정도 소요될 수 있습니다.
+> 📝 **참고**: 모델 배포 후 API 호출에 사용할 엔드포인트와 키는 각 모델의 상세 페이지에서 확인할 수 있습니다.
 
 ---
 
@@ -376,6 +347,8 @@ Entra ID 인증에서는 키 대신 엔드포인트 URL만 필요합니다.
 | Blob Container | `documents` | 문서 파일 컨테이너 |
 | Document Intelligence | `doc-intel-lab-0115` | 문서 분석 |
 | AI Search | `search-doc-lab-0115` | 검색 인덱싱 |
+| Microsoft Foundry | `ms-foundry-lab-0115` | AI 모델 관리 |
+| Foundry Project | `doc-search-project` | AI 워크스페이스 |
 
 ---
 
@@ -388,15 +361,17 @@ Entra ID 인증에서는 키 대신 엔드포인트 URL만 필요합니다.
 - [ ] Blob Container (`documents`) 생성 완료
 - [ ] Document Intelligence 생성 완료
 - [ ] AI Search 생성 완료
-- [ ] 각 서비스의 키/엔드포인트 확인 완료
+- [ ] Microsoft Foundry Hub 및 Project 생성 완료
+- [ ] GPT-4o 모델 배포 완료
+- [ ] text-embedding-3-large 모델 배포 완료
 
 ---
 
 ## 🔜 다음 단계
 
-환경 셋업이 완료되면 다음 튜토리얼에서 실제 문서를 업로드하고 처리하는 방법을 학습합니다.
+환경 셋업이 완료되면 다음 튜토리얼에서 Microsoft Entra ID 기반의 보안 연동 설정을 진행합니다.
 
-➡️ [02. 문서 업로드 및 Document Intelligence 연동](./02-document-upload.md)
+➡️ [02. Microsoft Entra ID 기반 리소스 연동 설정](./02-entra-id-setup.md)
 
 ---
 
@@ -407,9 +382,6 @@ Entra ID 인증에서는 키 대신 엔드포인트 URL만 필요합니다.
 
 ### Q: Free tier AI Search를 생성할 수 없습니다.
 **A:** 구독당 Free tier는 1개로 제한됩니다. 기존 Free tier Search 서비스를 삭제하거나 Basic tier를 사용하세요.
-
-### Q: Document Intelligence에서 Korea Central 지역을 선택할 수 없습니다.
-**A:** 일부 기능은 특정 지역에서만 사용 가능합니다. `East US` 또는 `West US 2` 지역을 선택하세요.
 
 ### Q: 리소스 생성 시 권한 오류가 발생합니다.
 **A:** 구독에 대한 Contributor 이상의 권한이 필요합니다. 관리자에게 문의하세요.
