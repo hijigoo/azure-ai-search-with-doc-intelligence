@@ -9,7 +9,7 @@
 3. [Azure Blob Storage 생성](#3-azure-blob-storage-생성)
 4. [Azure Document Intelligence 생성](#4-azure-document-intelligence-생성)
 5. [Azure AI Search 생성](#5-azure-ai-search-생성)
-6. [Microsoft Foundry 생성](#6-microsoft-foundry-생성)
+6. [Microsoft Foundry 생성 및 모델 배포](#6-microsoft-foundry-생성)
 
 ---
 
