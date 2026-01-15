@@ -167,9 +167,7 @@ Document Intelligence(구 Form Recognizer)는 문서에서 텍스트, 테이블,
    | Resource group | `rg-doc-intelligence-lab` | |
    | Region | `Korea Central` | 또는 `East US` (기능 가용성 확인) |
    | Name | `doc-intel-lab-[고유번호]` | 전역적으로 고유해야 함 |
-   | Pricing tier | `Free F0` 또는 `Standard S0` | 실습용은 Free 권장 |
-
-   > 💡 **팁**: Free tier는 월 500페이지까지 무료입니다. 실습에 충분합니다.
+   | Pricing tier | `Standard S0` | Standard 권장 |
 
    ![Document Intelligence 설정](./images/01-12-doc-intel-settings.png)
 
@@ -210,7 +208,7 @@ AI Search(구 Cognitive Search)는 전문 검색 서비스로, Document Intellig
    | Resource group | `rg-doc-intelligence-lab` | |
    | Service name | `search-doc-lab-[고유번호]` | 전역적으로 고유해야 함 |
    | Location | `Korea Central` | |
-   | Pricing tier | `Free` | 실습용으로 충분 |
+   | Pricing tier | `Free` | 혹은 `Basic` |
 
    > ⚠️ **주의**: Free tier는 구독당 1개만 생성 가능합니다. 이미 있다면 `Basic` tier를 선택하세요.
 

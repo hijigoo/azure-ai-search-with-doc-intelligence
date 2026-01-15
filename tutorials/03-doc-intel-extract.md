@@ -7,7 +7,7 @@
 1. [개요](#1-개요)
 2. [테스트 문서 준비](#2-테스트-문서-준비)
 3. [Azure Portal에서 Document Intelligence Studio 접속](#3-azure-portal에서-document-intelligence-studio-접속)
-4. [Read 모델로 텍스트 추출](#4-read-모델로-텍스트-추출)
+4. [OCR/Read 모델로 텍스트 추출](#4-ocrread-모델로-텍스트-추출)
 5. [Layout 모델로 문서 분석](#5-layout-모델로-문서-분석)
 6. [분석 결과 확인](#6-분석-결과-확인)
 
@@ -17,21 +17,21 @@
 
 ### Document Intelligence란?
 
-Azure Document Intelligence(구 Form Recognizer)는 AI 기반 문서 처리 서비스로, 다양한 형식의 문서에서 텍스트, 테이블, 구조 정보를 자동으로 추출합니다.
+Azure Document Intelligence는 AI 기반 문서 처리 서비스로, 다양한 형식의 문서에서 텍스트, 테이블, 구조 정보를 자동으로 추출합니다.
 
 ### 지원하는 문서 형식
 
 | 형식 | 확장자 |
 |------|--------|
 | PDF | `.pdf` |
-| 이미지 | `.jpg`, `.jpeg`, `.png`, `.bmp`, `.tiff` |
-| Office | `.docx`, `.xlsx`, `.pptx` |
+| 이미지 | `.jpg`, `.jpeg`, `.png`, `.bmp`, `.tiff`, `.heif` |
+| Office | `.docx`, `.xlsx`, `.pptx`, `.html` |
 
 ### 주요 분석 모델
 
 | 모델 | 용도 | 특징 |
 |------|------|------|
-| **Read** | OCR 텍스트 추출 | 가장 빠름, 텍스트만 추출 |
+| **OCR/Read** | OCR 텍스트 추출 | 가장 빠름, 텍스트만 추출 |
 | **Layout** | 문서 구조 분석 | 텍스트 + 테이블 + 레이아웃 |
 | **Prebuilt-document** | 일반 문서 | 키-값 쌍 추출 |
 | **Prebuilt-invoice** | 송장/인보이스 | 특화된 필드 추출 |
@@ -45,22 +45,16 @@ Azure Document Intelligence(구 Form Recognizer)는 AI 기반 문서 처리 서�
 
 실습을 위해 샘플 PDF 문서를 준비합니다.
 
+**샘플 파일 다운로드**:
+- [Health Plan 문서](https://github.com/Azure-Samples/azure-search-sample-data/tree/main/health-plan)
+- [Accelerating Sustainability with AI PDF](https://github.com/Azure-Samples/azure-search-sample-data/blob/main/sustainable-ai-pdf/Accelerating-Sustainability-with-AI-2025.pdf)
+
 > 💡 **팁**: 본인의 PDF 문서를 사용해도 됩니다.
 
-### 2.2 Blob Storage에 문서 업로드
+### 2.2 로컬에 파일 준비
 
-1. **Azure Portal > Storage Account로 이동**
-2. **왼쪽 메뉴 > Data storage > Containers** 클릭
-3. **`documents` 컨테이너 클릭**
-4. **`Upload` 버튼 클릭**
-
-   ![Blob Upload](./images/03-01-blob-upload.png)
-
-5. **파일 선택 및 업로드**
-   - 준비한 PDF 파일 선택
-   - `Upload` 클릭
-
-   ![Upload 완료](./images/03-02-blob-upload-complete.png)
+1. **위 링크에서 PDF 파일 다운로드**
+2. **로컬 PC에 저장**
 
 ---
 
@@ -69,71 +63,58 @@ Azure Document Intelligence(구 Form Recognizer)는 AI 기반 문서 처리 서�
 ### 3.1 Document Intelligence 리소스로 이동
 
 1. **Azure Portal에서 Document Intelligence 리소스로 이동**
-2. **Overview 페이지에서 `Document Intelligence Studio` 링크 클릭**
+2. **Overview 페이지에서 `Go to Document Intelligence Studio` 링크 클릭**
 
    ![Studio 링크](./images/03-03-doc-intel-studio-link.png)
 
-### 3.2 Document Intelligence Studio 접속
+### 3.2 Document analysis 모델 선택 화면
 
 1. **Document Intelligence Studio가 새 탭에서 열림**
 2. **필요시 Azure 계정으로 로그인**
+3. **다양한 Document analysis 모델 목록이 표시됨**
+   - OCR/Read
+   - Layout
+   - Prebuilt models (Invoice, Receipt 등)
+   - Custom models
 
    ![Studio 메인](./images/03-04-studio-main.png)
 
-### 3.3 리소스 연결 설정
-
-1. **우측 상단의 Settings(⚙️) 클릭**
-2. **Resource 탭에서 연결할 리소스 선택**
-   - Subscription: 본인 구독 선택
-   - Resource group: `rg-doc-intelligence-lab` 선택
-   - Resource: 생성한 Document Intelligence 선택
-
-   ![리소스 연결](./images/03-05-studio-resource-connect.png)
-
-3. **Save 클릭**
-
 ---
 
-## 4. Read 모델로 텍스트 추출
+## 4. OCR/Read 모델로 텍스트 추출
 
-Read 모델은 순수 OCR 기능으로, 텍스트만 빠르게 추출할 때 가장 적합합니다.
+OCR/Read 모델은 순수 OCR 기능으로, 텍스트만 빠르게 추출할 때 가장 적합합니다.
 
-### 4.1 Read 모델 선택
+### 4.1 OCR/Read 모델 선택
 
-1. **Document Intelligence Studio 메인 화면에서 `Read` 선택**
+1. **Document Intelligence Studio 메인 화면에서 `OCR/Read` 선택**
+    ![OCR/Read 선택](./images/03-05-studio-read-select.png)
 
-   ![Read 선택](./images/03-06-studio-read-select.png)
+### 4.2 문서 업로드 및 분석
 
-### 4.2 문서 선택 및 분석
+1. **왼쪽 패널에서 파일 업로드**
+   - `Drag & drop file here` 영역에 파일 드래그 앤 드롭
+   - 또는 `Browse for files` 클릭하여 파일 선택
+   - 또는 `Fetch from URL`로 URL에서 가져오기
 
-1. **`Analyze options` 섹션에서 소스 선택**
-   - **Local file**: 로컬 파일 업로드
-   - **From URL**: Blob Storage URL 사용
-   - **From storage**: Azure Storage 직접 연결
-
-2. **Blob Storage에서 문서 선택**
-   - `From storage` 선택
-   - Storage Account 연결
-   - `documents` 컨테이너에서 파일 선택
+2. **Analyze options 설정 (선택사항)**
+   - `Analyze options` 버튼 클릭
+   - **Run analysis range**: Current document / All documents
+   - **Page range**: All pages / Range (특정 페이지만 분석)
+   - **Optional output**: Searchable PDF (검색 가능한 PDF 출력)
+   - **Optional detection**: Barcodes, Language
+   - **Premium detection**: High resolution, Style font, Formulas
 
 3. **`Run analysis` 버튼 클릭**
+    ![Run analysis](./images/03-06-studio-run-analysis.png)
 
-   ![Read 분석 실행](./images/03-07-studio-read-analysis.png)
+### 4.3 OCR/Read 결과 확인
 
-### 4.3 Read 결과 확인
+1. **Content 탭에서 추출된 텍스트 확인**
 
-1. **Result 탭에서 추출된 텍스트 확인**
-2. **원본 문서와 추출 결과 비교**
+   ![OCR/Read 결과](./images/03-07-studio-read-analysis.png)
 
-   | 항목 | 설명 |
-   |------|------|
-   | content | 추출된 전체 텍스트 |
-   | pages | 페이지별 정보 |
-   | languages | 감지된 언어 |
-
-   ![Read 결과](./images/03-08-studio-read-result.png)
-
-> 💡 **참고**: Read 모델은 테이블이나 레이아웃 정보를 추출하지 않습니다. 텍스트만 필요한 경우 가장 빠른 옵션입니다.
+> 💡 **참고**: OCR/Read 모델은 테이블이나 레이아웃 정보를 추출하지 않습니다. 텍스트만 필요한 경우 가장 빠른 옵션입니다.
 
 ---
 
@@ -147,90 +128,33 @@ Layout 모델은 문서의 텍스트, 테이블, 체크박스, 구조 정보를 
 
    ![Layout 선택](./images/03-09-studio-layout-select.png)
 
-### 5.2 문서 소스 선택
+### 5.2 문서 업로드 및 분석
 
-1. **`Analyze options` 섹션에서 소스 선택**
-   - **From URL**: Blob Storage URL 사용
-   - **From storage**: Azure Storage 직접 연결
-   - **Local file**: 로컬 파일 업로드
+1. **왼쪽 패널에서 파일 업로드**
+   - `Drag & drop file here` 영역에 파일 드래그 앤 드롭
+   - 또는 `Browse for files` 클릭하여 파일 선택
+   - 또는 `Fetch from URL`로 URL에서 가져오기
 
-2. **Blob Storage에서 문서 선택**
-   - `From storage` 선택
-   - Storage Account 연결
-   - `documents` 컨테이너에서 파일 선택
+2. **Analyze options 설정 (선택사항)**
+   - `Analyze options` 버튼 클릭
+   - **Run analysis range**: Current document / All documents
+   - **Page range**: All pages / Range (특정 페이지만 분석)
+   - **Output format style**: Text / Markdown (Markdown 선택 권장)
+   - **Optional output**: Figure image
+   - **Optional detection**: Barcodes, Language, Key-value pairs
+   - **Premium detection**: High resolution, Style font, Formulas
 
-   ![문서 선택](./images/03-10-studio-select-document.png)
+3. **`Run analysis` 버튼 클릭**
+    ![Run analysis](./images/03-06-studio-run-analysis.png)
 
-### 5.3 분석 실행
+### 5.3 Layout 결과 확인
+1. **Content 탭에서 추출된 Markdown 확인**
 
-1. **`Run analysis` 버튼 클릭**
-2. **분석 진행 대기 (보통 몇 초 소요)**
+    ![마크다운 결과](./images/03-12-result-markdown.png)
 
-   ![분석 실행](./images/03-11-studio-run-analysis.png)
+2. **Content 탭에서 추출된 테이블 확인**
 
-### 5.4 Read vs Layout 비교
-
-| 비교 | Read | Layout |
-|------|------|--------|
-| 속도 | 빠름 | 보통 |
-| 텍스트 | ✅ | ✅ |
-| 테이블 | ❌ | ✅ |
-| 레이아웃 | ❌ | ✅ |
-| 키-값 쌍 | ❌ | ✅ |
-
----
-
-## 6. 분석 결과 확인
-
-### 6.1 추출된 텍스트 확인
-
-1. **Result 탭에서 추출된 텍스트 확인**
-2. **원본 문서와 추출 결과 비교**
-
-   ![텍스트 결과](./images/03-12-result-text.png)
-
-### 6.2 테이블 추출 결과
-
-1. **Tables 탭 클릭**
-2. **문서에서 감지된 테이블 확인**
-
-   | 정보 | 설명 |
-   |------|------|
-   | Table count | 감지된 테이블 수 |
-   | Rows/Columns | 각 테이블의 행/열 수 |
-   | Cell content | 셀 내용 |
-
-   ![테이블 결과](./images/03-13-result-tables.png)
-
-### 6.3 레이아웃 구조 확인
-
-1. **Layout 탭에서 문서 구조 확인**
-   - 페이지 구분
-   - 단락(Paragraph) 정보
-   - 섹션 구분
-
-   ![레이아웃 결과](./images/03-14-result-layout.png)
-
-### 6.4 JSON 결과 확인
-
-1. **JSON 탭 클릭**
-2. **API 응답 형식의 전체 결과 확인**
-
-```json
-{
-  "status": "succeeded",
-  "analyzeResult": {
-    "apiVersion": "2024-02-29-preview",
-    "modelId": "prebuilt-layout",
-    "content": "추출된 전체 텍스트...",
-    "pages": [...],
-    "tables": [...],
-    "paragraphs": [...]
-  }
-}
-```
-
-   ![JSON 결과](./images/03-15-result-json.png)
+    ![테이블 결과](./images/03-13-result-tables.png)
 
 ---
 
@@ -238,14 +162,13 @@ Layout 모델은 문서의 텍스트, 테이블, 체크박스, 구조 정보를 
 
 Document Intelligence 컨텐츠 추출 실습이 완료되었는지 확인하세요:
 
-- [ ] 테스트 문서를 Blob Storage에 업로드 완료
+- [ ] 테스트 문서 로컬에 다운로드 완료
 - [ ] Document Intelligence Studio 접속 완료
-- [ ] 리소스 연결 설정 완료
-- [ ] Read 모델로 텍스트 추출 실행 완료
+- [ ] OCR/Read 모델로 텍스트 추출 실행 완료
 - [ ] Layout 모델로 문서 분석 실행 완료
 - [ ] 추출된 텍스트 결과 확인 완료
+- [ ] Markdown 추출 결과 확인 완료
 - [ ] 테이블 추출 결과 확인 완료
-- [ ] JSON 응답 형식 확인 완료
 
 ---
 
@@ -267,9 +190,3 @@ Document Intelligence로 문서 분석을 경험했다면, 다음 튜토리얼�
 
 ### Q: 분석 결과가 정확하지 않습니다.
 **A:** 문서 품질(해상도, 스캔 상태)을 확인하세요. 고해상도 문서일수록 더 정확한 결과를 얻을 수 있습니다.
-
-### Q: 테이블이 제대로 감지되지 않습니다.
-**A:** 테이블의 경계선이 명확하지 않은 경우 감지가 어려울 수 있습니다. Layout 모델 대신 Table 모델을 사용해 보세요.
-
-### Q: 한글이 깨져서 나옵니다.
-**A:** Document Intelligence는 한글을 지원합니다. 원본 문서가 이미지인 경우 OCR 품질 문제일 수 있습니다. 고해상도 이미지를 사용하세요.
