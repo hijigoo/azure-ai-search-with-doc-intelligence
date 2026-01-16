@@ -118,6 +118,16 @@ Blob Storage는 문서 파일을 저장하는 데 사용됩니다.
 
    ![Storage Account 생성 완료](./images/01-08-storage-created.png)
 
+<!-- 
+### Entra authorization 설정
+    - 생성한 Storage Account 의 Settings > Configuration 메뉴로 이동
+    - "Default to Microsoft Entra authorization in the Azure portal
+" 옵션을 "Enabled" 로 확인
+    - 저장 (Save) 클릭
+
+    ![Entra authorization 설정](./images/01-08-entra-authorization.png) -->
+
+
 ### Blob Container 생성
 
 1. **생성된 Storage Account로 이동**
@@ -136,11 +146,23 @@ Blob Storage는 문서 파일을 저장하는 데 사용됩니다.
    | Name | `documents` | 문서를 저장할 컨테이너 |
    | Anonymous access level | `Private (no anonymous access)` | 보안을 위해 Private 설정 |
 
+
    > 🔒 **보안 참고**: Private으로 설정하면 익명 접근이 차단됩니다. AI Search에서는 **연결 문자열(Connection String)** 또는 **Managed Identity**를 통해 안전하게 접근합니다.
 
    ![Container 설정](./images/01-10-container-settings.png)
 
 4. **Create 클릭하여 생성 완료**
+
+   ![Container 완료](./images/01-10-container-created.png)
+
+5. **Container 추가 생성**
+    - 동일한 방법으로 `output` 컨테이너 생성합니다.
+  
+    | 필드 | 값 | 설명 |
+   |------|-----|------|
+   | Name | `output` | Document Intelligence 출력 저장 컨테이너d |
+   | Anonymous access level | `Private (no anonymous access)` | 보안을 위해 Private 설정 |
+
 
 ---
 
@@ -165,7 +187,7 @@ Document Intelligence(구 Form Recognizer)는 문서에서 텍스트, 테이블,
    |------|-----|------|
    | Subscription | 본인 구독 선택 | |
    | Resource group | `rg-doc-intelligence-lab` | |
-   | Region | `Korea Central` | 또는 `East US` (기능 가용성 확인) |
+   | Region | `East US` | 기능 가용성 확인 필요 |
    | Name | `doc-intel-lab-[고유번호]` | 전역적으로 고유해야 함 |
    | Pricing tier | `Standard S0` | Standard 권장 |
 
@@ -207,7 +229,7 @@ AI Search(구 Cognitive Search)는 전문 검색 서비스로, Document Intellig
    | Subscription | 본인 구독 선택 | |
    | Resource group | `rg-doc-intelligence-lab` | |
    | Service name | `search-doc-lab-[고유번호]` | 전역적으로 고유해야 함 |
-   | Location | `Korea Central` | |
+   | Location | `East US` | |
    | Pricing tier | `Free` | 혹은 `Basic` |
 
    > ⚠️ **주의**: Free tier는 구독당 1개만 생성 가능합니다. 이미 있다면 `Basic` tier를 선택하세요.

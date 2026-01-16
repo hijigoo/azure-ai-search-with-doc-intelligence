@@ -51,11 +51,6 @@ Azure Document Intelligence는 AI 기반 문서 처리 서비스로, 다양한 �
 
 > 💡 **팁**: 본인의 PDF 문서를 사용해도 됩니다.
 
-### 2.2 로컬에 파일 준비
-
-1. **위 링크에서 PDF 파일 다운로드**
-2. **로컬 PC에 저장**
-
 ---
 
 ## 3. Azure Portal에서 Document Intelligence Studio 접속
@@ -176,7 +171,7 @@ Document Intelligence 컨텐츠 추출 실습이 완료되었는지 확인하세
 
 Document Intelligence로 문서 분석을 경험했다면, 다음 튜토리얼에서 AI Search와 연동하여 대량의 문서를 자동으로 인덱싱하는 방법을 학습합니다.
 
-➡️ [04. AI Search로 문서 인덱싱하기](./04-indexing.md)
+➡️ [04. AI Search로 문서 인덱싱하기](./04-aisearch-indexing.md)
 
 ---
 
