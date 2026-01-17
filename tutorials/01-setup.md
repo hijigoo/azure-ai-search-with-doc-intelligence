@@ -168,7 +168,7 @@ Blob Storage는 문서 파일을 저장하는 데 사용됩니다.
 
 ## 4. Azure Document Intelligence 생성
 
-Document Intelligence(구 Form Recognizer)는 문서에서 텍스트, 테이블, 구조 등을 추출하는 AI 서비스입니다.
+Document Intelligence 는 문서에서 텍스트, 테이블, 구조 등을 추출하는 AI 서비스입니다. Document Intelligence 를 독립적으로 사용할 때는 이 방식을 선택합니다. **만약 AI Search 와 직접 연동하여 사용할 경우, Azure AI 서비스 (Multi-services) 를 생성합니다.**
 
 ### 단계별 가이드
 
@@ -207,7 +207,66 @@ Document Intelligence(구 Form Recognizer)는 문서에서 텍스트, 테이블,
 
 ---
 
-## 5. Azure AI Search 생성
+## 5. Azure Document Intelligence 생성 - Azure AI Services (Multi-services)
+
+Document Intelligence를 AI Search와 직접 연동하여 사용할 때는 Azure AI Services (Multi-services)를 생성합니다. Multi-services 리소스는 Document Intelligence를 포함한 여러 Azure AI 서비스를 하나의 엔드포인트와 키로 통합 관리할 수 있습니다.
+
+### 단계별 가이드
+
+1. **Azure AI Services 메뉴 이동**
+   - 상단 검색창에 "Azure AI services" 입력
+   - "Azure AI services" 클릭
+
+   ![Azure AI Services 검색](./images/01-14-00-create_azure_ai_search.png)
+
+2. **새 Azure AI Services 생성**
+   - `+ Create` 버튼 클릭
+   - "Azure AI services multi-service account" 선택
+
+3. **기본 정보 입력 (Basics 탭)**
+
+   | 필드 | 값 | 설명 |
+   |------|-----|------|
+   | Subscription | 본인 구독 선택 | |
+   | Resource group | `rg-doc-intelligence-lab` | 앞서 생성한 리소스 그룹 |
+   | Region | `East US` | AI Search와 동일 지역 권장 |
+   | Name | `ai-services-lab-[고유번호]` | 전역적으로 고유해야 함 |
+   | Pricing tier | `Standard S0` | 표준 요금제 |
+
+   > 💡 **팁**: Multi-services 리소스는 Document Intelligence, Computer Vision, Language 등 여러 서비스를 하나의 키로 사용할 수 있어 관리가 편리합니다.
+
+   ![Azure AI Services 기본 설정](./images/01-14-01-create_azure_ai.png)
+
+4. **네트워크 설정 (Networking 탭)**
+   - `All networks, including the internet, can access this resource` 선택
+   - 실습 환경에서는 모든 네트워크 접근 허용
+
+   ![Azure AI Services 네트워크 설정](./images/01-14-02-create_azure_ai_network.png)
+
+5. **ID 설정 (Identity 탭)**
+   - System assigned managed identity: `On` 선택
+   - Managed Identity를 활성화하면 다른 Azure 리소스와 안전하게 연동 가능
+
+   ![Azure AI Services ID 설정](./images/01-14-03-create_azure_ai_identity.png)
+
+6. **검토 및 생성**
+   - `Review + create` 클릭
+   - 검증 통과 후 `Create` 클릭
+   - 배포 완료까지 약 1-2분 소요
+
+   ![Azure AI Services 생성 완료](./images/01-14-04-create_azure_ai_done.png)
+
+### Document Intelligence vs Multi-services 비교
+
+| 항목 | Document Intelligence (단독) | Azure AI Services (Multi-services) |
+|------|------------------------------|-----------------------------------|
+| 용도 | Document Intelligence만 사용 | 여러 AI 서비스 통합 사용 |
+| AI Search 연동 | 별도 설정 필요 | 직접 연동 지원 |
+| 관리 | 개별 키/엔드포인트 관리 | 통합 키/엔드포인트 관리 |
+
+---
+
+## 6. Azure AI Search 생성
 
 AI Search(구 Cognitive Search)는 전문 검색 서비스로, Document Intelligence와 연동하여 문서 검색을 제공합니다.
 
@@ -255,13 +314,13 @@ AI Search(구 Cognitive Search)는 전문 검색 서비스로, Document Intellig
 
 ---
 
-## 6. Microsoft Foundry 생성
+## 7. Microsoft Foundry 생성
 
 Microsoft Foundry는 AI 모델을 배포하고 관리하는 통합 플랫폼입니다. 문서 처리 결과를 AI 모델로 분석하거나, 검색 결과를 증강하는 데 사용합니다.
 
 ### 단계별 가이드
 
-#### 6.1 Microsoft Foundry 생성
+#### 7.1 Microsoft Foundry 생성
 
 1. **Microsoft Foundry 메뉴 이동**
    - 상단 검색창에 "Microsoft Foundry" 입력
@@ -294,7 +353,7 @@ Microsoft Foundry는 AI 모델을 배포하고 관리하는 통합 플랫폼입�
 
    ![Microsoft Foundry 생성 완료](./images/01-23-ms-foundry-created.png)
 
-#### 6.2 Microsoft Foundry Portal 접속
+#### 7.2 Microsoft Foundry Portal 접속
 
 1. **생성된 리소스로 이동**
    - 배포 완료 후 `Go to resource` 버튼 클릭
@@ -305,7 +364,7 @@ Microsoft Foundry는 AI 모델을 배포하고 관리하는 통합 플랫폼입�
    ![Go to Foundry Portal](./images/01-25-ms-foundry-go-to-portal.png)
 
 
-#### 6.3 AI 모델 배포
+#### 7.3 AI 모델 배포
 
 문서 처리 및 검색 증강에 필요한 AI 모델을 배포합니다.
 
@@ -366,6 +425,7 @@ Microsoft Foundry는 AI 모델을 배포하고 관리하는 통합 플랫폼입�
 | Storage Account | `stdocintellab0115` | 문서 저장 |
 | Blob Container | `documents` | 문서 파일 컨테이너 |
 | Document Intelligence | `doc-intel-lab-0115` | 문서 분석 |
+| Document Intelligence - Multi-services | `ai-services-lab-0115` | 통합 AI 서비스 |
 | AI Search | `search-doc-lab-0115` | 검색 인덱싱 |
 | Microsoft Foundry | `ms-foundry-lab-0115` | AI 모델 관리 |
 | Foundry Project | `doc-search-project` | AI 워크스페이스 |

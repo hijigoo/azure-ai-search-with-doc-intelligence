@@ -53,7 +53,7 @@ Azure Document Intelligence는 AI 기반 문서 처리 서비스로, 다양한 �
 
 ---
 
-## 3. Azure Portal에서 Document Intelligence Studio 접속
+## 3. Document Intelligence Studio 접속
 
 ### 3.1 Document Intelligence 리소스로 이동
 
@@ -62,7 +62,27 @@ Azure Document Intelligence는 AI 기반 문서 처리 서비스로, 다양한 �
 
    ![Studio 링크](./images/03-03-doc-intel-studio-link.png)
 
-### 3.2 Document analysis 모델 선택 화면
+---
+
+## 4. Azure AI Services 에서 Document Intelligence Studio 접속
+
+### 4.1 Azure AI Services 리소스로 이동
+
+1. **Azure Portal의 Resources 에서 Azure AI services multi-serivce account 리소스로 이동**
+
+![Studio 링크](./images/03-03-00-azure-ai-services-link.png)
+
+2. **Overview 페이지에서 `Document Intelligence` 링크 클릭**
+
+   ![Studio 링크](./images/03-03-01-azure-ai-services-di.png)
+
+3. **`Document Intelligence Studio` 링크 클릭**
+
+    ![Studio 링크](./images/03-03-02-azure-ai-services-di-studio.png)
+
+---
+
+## 5. 모델 선택 화면
 
 1. **Document Intelligence Studio가 새 탭에서 열림**
 2. **필요시 Azure 계정으로 로그인**
@@ -74,18 +94,17 @@ Azure Document Intelligence는 AI 기반 문서 처리 서비스로, 다양한 �
 
    ![Studio 메인](./images/03-04-studio-main.png)
 
----
 
-## 4. OCR/Read 모델로 텍스트 추출
+## 6. OCR/Read 모델로 텍스트 추출
 
 OCR/Read 모델은 순수 OCR 기능으로, 텍스트만 빠르게 추출할 때 가장 적합합니다.
 
-### 4.1 OCR/Read 모델 선택
+### 6.1 OCR/Read 모델 선택
 
 1. **Document Intelligence Studio 메인 화면에서 `OCR/Read` 선택**
     ![OCR/Read 선택](./images/03-05-studio-read-select.png)
 
-### 4.2 문서 업로드 및 분석
+### 6.2 문서 업로드 및 분석
 
 1. **왼쪽 패널에서 파일 업로드**
    - `Drag & drop file here` 영역에 파일 드래그 앤 드롭
@@ -103,7 +122,7 @@ OCR/Read 모델은 순수 OCR 기능으로, 텍스트만 빠르게 추출할 때
 3. **`Run analysis` 버튼 클릭**
     ![Run analysis](./images/03-06-studio-run-analysis.png)
 
-### 4.3 OCR/Read 결과 확인
+### 6.3 OCR/Read 결과 확인
 
 1. **Content 탭에서 추출된 텍스트 확인**
 
@@ -113,17 +132,17 @@ OCR/Read 모델은 순수 OCR 기능으로, 텍스트만 빠르게 추출할 때
 
 ---
 
-## 5. Layout 모델로 문서 분석
+## 7. Layout 모델로 문서 분석
 
 Layout 모델은 문서의 텍스트, 테이블, 체크박스, 구조 정보를 추출하는 데 가장 적합합니다.
 
-### 5.1 Layout 모델 선택
+### 7.1 Layout 모델 선택
 
 1. **Document Intelligence Studio 메인 화면에서 `Layout` 선택**
 
    ![Layout 선택](./images/03-09-studio-layout-select.png)
 
-### 5.2 문서 업로드 및 분석
+### 7.2 문서 업로드 및 분석
 
 1. **왼쪽 패널에서 파일 업로드**
    - `Drag & drop file here` 영역에 파일 드래그 앤 드롭
@@ -142,7 +161,7 @@ Layout 모델은 문서의 텍스트, 테이블, 체크박스, 구조 정보를 
 3. **`Run analysis` 버튼 클릭**
     ![Run analysis](./images/03-06-studio-run-analysis.png)
 
-### 5.3 Layout 결과 확인
+### 7.3 Layout 결과 확인
 1. **Content 탭에서 추출된 Markdown 확인**
 
     ![마크다운 결과](./images/03-12-result-markdown.png)
