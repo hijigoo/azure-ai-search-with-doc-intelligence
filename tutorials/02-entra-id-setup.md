@@ -93,13 +93,19 @@ AI Search가 Blob Storage의 문서를 읽고, Knowledge Store에 데이터를 �
    ![Storage 역할 선택](./images/02-04-storage-role-select.png)
 
 5. **Members 탭에서 멤버 추가**
-   - `Assign access to`: **Managed identity** 선택
-   - `+ Select members` 클릭
-   - `Managed identity` 드롭다운에서 **Search service** 선택
-   - 앞서 생성한 AI Search 서비스 선택 (search-doc-lab-[고유번호])
-   - `Select` 클릭
-
-   ![Storage 멤버 선택](./images/02-05-storage-member-select.png)
+    - AI Search 추가
+      - `Assign access to`: **Managed identity** 선택
+      - `+ Select members` 클릭
+      - `Managed identity` 드롭다운에서 **Search service** 선택
+      - 앞서 생성한 AI Search 서비스 선택 (search-doc-lab-[고유번호])
+      - `Select` 클릭
+    - User 계정 추가 (선택 사항)
+      - `Assign access to`: **User, group, or service principal** 선택
+      - `+ Select members` 클릭
+      - 본인 계정 검색 및 선택
+      - `Select` 클릭
+    
+    ![Storage 멤버 선택](./images/02-05-storage-member-select.png)
 
 6. **Review + assign 클릭하여 역할 할당 완료**
 
