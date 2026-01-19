@@ -26,7 +26,9 @@ Azure AI Search의 **Import data (new)** 는 인덱싱 설정을 간소화한 �
 
 ## 2. 인덱싱 아키텍처 이해
 
-<img src="https://learn.microsoft.com/ko-kr/azure/ai-services/document-intelligence/media/rag/azure-rag-processing.png" alt="Indexing architecture" style="border: 1px solid #ccc; border-radius: 4px;">
+<kbd>
+  <img src="https://learn.microsoft.com/ko-kr/azure/ai-services/document-intelligence/media/rag/azure-rag-processing.png" alt="Indexing architecture">
+</kbd>
 
 ---
 
@@ -47,7 +49,9 @@ Azure AI Search의 **Import data (new)** 는 인덱싱 설정을 간소화한 �
       - `파일 선택` 클릭하여 샘플 PDF 파일 업로드 
 
    - 업로드 확인 :
-   <img src="./images/04-01-sample-upload.png" alt="샘플 파일 업로드" style="border: 1px solid #ccc; border-radius: 4px;">
+   <kbd>
+  <img src="./images/04-01-sample-upload.png" alt="샘플 파일 업로드">
+</kbd>
 
 ---   
 
@@ -64,19 +68,25 @@ Azure AI Search의 **Import data (new)** 는 인덱싱 설정을 간소화한 �
 
    > ⚠️ **주의**: `Import data`가 아닌 **`Import data (new)`** 를 선택하세요.
 
-   <img src="./images/04-02-import-data-new-button.png" alt="Import data new" style="border: 1px solid #ccc; border-radius: 4px;">
+   <kbd>
+  <img src="./images/04-02-import-data-new-button.png" alt="Import data new">
+</kbd>
 
 2. **Data Source 선택**
    - 여러 옵션 중 **Azure Blob Storage** 선택
 
-   <img src="./images/04-03-azure-blob-storage-select.png" alt="Azure Blob Storage 선택" style="border: 1px solid #ccc; border-radius: 4px;">
+   <kbd>
+  <img src="./images/04-03-azure-blob-storage-select.png" alt="Azure Blob Storage 선택">
+</kbd>
 
 3. **Multimodal RAG 선택**
    - 여러 옵션 중 **Multimodal RAG** 선택
 
    > 💡 **Multimodal RAG**: Document Intelligence를 사용하여 PDF에서 텍스트/테이블/이미지 등을 추출하고, Azure OpenAI로 벡터 임베딩 및 이미지 캡션을 생성합니다.
 
-   <img src="./images/04-03-multimodal-rag-select.png" alt="Multimodal RAG 선택" style="border: 1px solid #ccc; border-radius: 4px;">
+   <kbd>
+  <img src="./images/04-03-multimodal-rag-select.png" alt="Multimodal RAG 선택">
+</kbd>
 
 ---
 
@@ -98,7 +108,9 @@ Azure AI Search의 **Import data (new)** 는 인덱싱 설정을 간소화한 �
    - `Authentication using managed identity` 선택
    - `Managed identity type`: **System-assigned** 선택
 
-   <img src="./images/04-04-connect-data.png" alt="데이터 소스 설정" style="border: 1px solid #ccc; border-radius: 4px;">
+   <kbd>
+  <img src="./images/04-04-connect-data.png" alt="데이터 소스 설정">
+</kbd>
 
 3. **Next** 클릭
 
@@ -119,7 +131,9 @@ Document Intelligence를 사용하여 문서에서 콘텐츠를 추출합니다.
    | Select a multi-service account | `ai-services-[고유번호]` | 생성한 리소스 |
    | Authentication type | `System-assigned` | Entra ID 기반 접근 |
 
-   <img src="./images/04-05-content-extraction.png" alt="Document Intelligence 연결" style="border: 1px solid #ccc; border-radius: 4px;">
+   <kbd>
+  <img src="./images/04-05-content-extraction.png" alt="Document Intelligence 연결">
+</kbd>
 
 2. **Next** 클릭
 
@@ -142,7 +156,9 @@ Azure AI Foundry 를 사용하여 이미지에서 캡션을 생성하고 텍스�
    | Azure AI Foundry/Hub project | `project-default (ms-foundry-lab-[고유번호])` | Microsoft Foundry 프로젝트 |
    | Model deployment | `gpt-40` | 멀티모달 모델 |
 
-   <img src="./images/04-06-image-verbalization.png" alt="Azure AI Foundry 설정" style="border: 1px solid #ccc; border-radius: 4px;">
+   <kbd>
+  <img src="./images/04-06-image-verbalization.png" alt="Azure AI Foundry 설정">
+</kbd>
 
 2. **Text Vectorization 정보 선택**:
 
@@ -153,7 +169,9 @@ Azure AI Foundry 를 사용하여 이미지에서 캡션을 생성하고 텍스�
    | Azure AI Foundry/Hub project | `project-default (ms-foundry-lab-[고유번호])` | Microsoft Foundry 프로젝트 |
    | Model deployment | `text-embedding-3-large` | 임베딩 모델 |
 
-   <img src="./images/04-06-text-vectorization.png" alt="Text Vectorization 설정" style="border: 1px solid #ccc; border-radius: 4px;">
+   <kbd>
+  <img src="./images/04-06-text-vectorization.png" alt="Text Vectorization 설정">
+</kbd>
 
 3. **Next** 클릭
 
@@ -173,7 +191,9 @@ Azure AI Foundry 를 사용하여 이미지에서 캡션을 생성하고 텍스�
    | Storage account | `stdocintellab[고유번호]` | Storage Account |
    | Blob container | `output` | Blob 컨테이너 |
 
-   <img src="./images/04-07-image-output.png" alt="Text Vectorization 설정" style="border: 1px solid #ccc; border-radius: 4px;">
+   <kbd>
+  <img src="./images/04-07-image-output.png" alt="Text Vectorization 설정">
+</kbd>
 
 2. **Next** 클릭
 
@@ -190,7 +210,9 @@ Azure AI Foundry 를 사용하여 이미지에서 캡션을 생성하고 텍스�
    | Enable semantic ranker | ✅ 체크 | 시맨틱 검색 활성화 |
    | Schedule indexing | Once | 1회만 실행 |
 
-   <img src="./images/04-08-advanced-settings.png" alt="인덱스 설정" style="border: 1px solid #ccc; border-radius: 4px;">
+   <kbd>
+  <img src="./images/04-08-advanced-settings.png" alt="인덱스 설정">
+</kbd>
 
 
 2. **Next** 클릭
@@ -206,7 +228,9 @@ Azure AI Foundry 를 사용하여 이미지에서 캡션을 생성하고 텍스�
 2. **`Create`** 버튼 클릭
 3. **인덱싱이 자동으로 시작됨**
 
-   <img src="./images/04-10-create-complete.png" alt="인덱싱 생성 완료" style="border: 1px solid #ccc; border-radius: 4px;">
+   <kbd>
+  <img src="./images/04-10-create-complete.png" alt="인덱싱 생성 완료">
+</kbd>
 
 ---
 
@@ -236,7 +260,9 @@ Import data (new)가 자동으로 생성하는 리소스:
    | Success | 완료 |
    | Failed | 실패 |
 
-   <img src="./images/04-11-indexer-status.png" alt="인덱서 상태" style="border: 1px solid #ccc; border-radius: 4px;">
+   <kbd>
+  <img src="./images/04-11-indexer-status.png" alt="인덱서 상태">
+</kbd>
 
 
 ### 11.3 인덱스 검색 테스트
@@ -248,7 +274,9 @@ Import data (new)가 자동으로 생성하는 리소스:
 
 3. **Search 클릭하여 결과 확인**
 
-   <img src="./images/04-13-search-explorer.png" alt="검색 테스트" style="border: 1px solid #ccc; border-radius: 4px;">
+   <kbd>
+  <img src="./images/04-13-search-explorer.png" alt="검색 테스트">
+</kbd>
 
 
 ### 11.4 이미지 캡션 확인
@@ -256,7 +284,9 @@ Import data (new)가 자동으로 생성하는 리소스:
 1. GPT-4o가 생성한 이미지 캡션이 인덱스에 저장되었는지 확인:
 검색어: `geometric structure`
 
-   <img src="./images/04-15-image-caption-result.png" alt="이미지 캡션 확인" style="border: 1px solid #ccc; border-radius: 4px;">
+   <kbd>
+  <img src="./images/04-15-image-caption-result.png" alt="이미지 캡션 확인">
+</kbd>
 
 ---
 

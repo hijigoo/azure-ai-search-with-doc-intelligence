@@ -60,7 +60,9 @@ Azure Document Intelligence는 AI 기반 문서 처리 서비스로, 다양한 �
 1. **Azure Portal에서 Document Intelligence 리소스로 이동**
 2. **Overview 페이지에서 `Go to Document Intelligence Studio` 링크 클릭**
 
-   <img src="./images/03-03-doc-intel-studio-link.png" alt="Studio 링크" style="border: 1px solid #ccc; border-radius: 4px;">
+   <kbd>
+  <img src="./images/03-03-doc-intel-studio-link.png" alt="Studio 링크">
+</kbd>
 
 ---
 
@@ -70,15 +72,21 @@ Azure Document Intelligence는 AI 기반 문서 처리 서비스로, 다양한 �
 
 1. **Azure Portal의 Resources 에서 Azure AI services multi-serivce account 리소스로 이동**
 
-<img src="./images/03-03-00-azure-ai-services-link.png" alt="Studio 링크" style="border: 1px solid #ccc; border-radius: 4px;">
+<kbd>
+  <img src="./images/03-03-00-azure-ai-services-link.png" alt="Studio 링크">
+</kbd>
 
 2. **Overview 페이지에서 `Document Intelligence` 링크 클릭**
 
-   <img src="./images/03-03-01-azure-ai-services-di.png" alt="Studio 링크" style="border: 1px solid #ccc; border-radius: 4px;">
+   <kbd>
+  <img src="./images/03-03-01-azure-ai-services-di.png" alt="Studio 링크">
+</kbd>
 
 3. **`Document Intelligence Studio` 링크 클릭**
 
-    <img src="./images/03-03-02-azure-ai-services-di-studio.png" alt="Studio 링크" style="border: 1px solid #ccc; border-radius: 4px;">
+    <kbd>
+  <img src="./images/03-03-02-azure-ai-services-di-studio.png" alt="Studio 링크">
+</kbd>
 
 ---
 
@@ -92,7 +100,9 @@ Azure Document Intelligence는 AI 기반 문서 처리 서비스로, 다양한 �
    - Prebuilt models (Invoice, Receipt 등)
    - Custom models
 
-   <img src="./images/03-04-studio-main.png" alt="Studio 메인" style="border: 1px solid #ccc; border-radius: 4px;">
+   <kbd>
+  <img src="./images/03-04-studio-main.png" alt="Studio 메인">
+</kbd>
 
 
 ## 6. OCR/Read 모델로 텍스트 추출
@@ -102,7 +112,9 @@ OCR/Read 모델은 순수 OCR 기능으로, 텍스트만 빠르게 추출할 때
 ### 6.1 OCR/Read 모델 선택
 
 1. **Document Intelligence Studio 메인 화면에서 `OCR/Read` 선택**
-    <img src="./images/03-05-studio-read-select.png" alt="OCR/Read 선택" style="border: 1px solid #ccc; border-radius: 4px;">
+    <kbd>
+  <img src="./images/03-05-studio-read-select.png" alt="OCR/Read 선택">
+</kbd>
 
 ### 6.2 문서 업로드 및 분석
 
@@ -120,13 +132,17 @@ OCR/Read 모델은 순수 OCR 기능으로, 텍스트만 빠르게 추출할 때
    - **Premium detection**: High resolution, Style font, Formulas
 
 3. **`Run analysis` 버튼 클릭**
-    <img src="./images/03-06-studio-run-analysis.png" alt="Run analysis" style="border: 1px solid #ccc; border-radius: 4px;">
+    <kbd>
+  <img src="./images/03-06-studio-run-analysis.png" alt="Run analysis">
+</kbd>
 
 ### 6.3 OCR/Read 결과 확인
 
 1. **Content 탭에서 추출된 텍스트 확인**
 
-   <img src="./images/03-07-studio-read-analysis.png" alt="OCR/Read 결과" style="border: 1px solid #ccc; border-radius: 4px;">
+   <kbd>
+  <img src="./images/03-07-studio-read-analysis.png" alt="OCR/Read 결과">
+</kbd>
 
 > 💡 **참고**: OCR/Read 모델은 테이블이나 레이아웃 정보를 추출하지 않습니다. 텍스트만 필요한 경우 가장 빠른 옵션입니다.
 
@@ -140,7 +156,9 @@ Layout 모델은 문서의 텍스트, 테이블, 체크박스, 구조 정보를 
 
 1. **Document Intelligence Studio 메인 화면에서 `Layout` 선택**
 
-   <img src="./images/03-09-studio-layout-select.png" alt="Layout 선택" style="border: 1px solid #ccc; border-radius: 4px;">
+   <kbd>
+  <img src="./images/03-09-studio-layout-select.png" alt="Layout 선택">
+</kbd>
 
 ### 7.2 문서 업로드 및 분석
 
@@ -159,16 +177,22 @@ Layout 모델은 문서의 텍스트, 테이블, 체크박스, 구조 정보를 
    - **Premium detection**: High resolution, Style font, Formulas
 
 3. **`Run analysis` 버튼 클릭**
-    <img src="./images/03-06-studio-run-analysis.png" alt="Run analysis" style="border: 1px solid #ccc; border-radius: 4px;">
+    <kbd>
+  <img src="./images/03-06-studio-run-analysis.png" alt="Run analysis">
+</kbd>
 
 ### 7.3 Layout 결과 확인
 1. **Content 탭에서 추출된 Markdown 확인**
 
-    <img src="./images/03-12-result-markdown.png" alt="마크다운 결과" style="border: 1px solid #ccc; border-radius: 4px;">
+    <kbd>
+  <img src="./images/03-12-result-markdown.png" alt="마크다운 결과">
+</kbd>
 
 2. **Content 탭에서 추출된 테이블 확인**
 
-    <img src="./images/03-13-result-tables.png" alt="테이블 결과" style="border: 1px solid #ccc; border-radius: 4px;">
+    <kbd>
+  <img src="./images/03-13-result-tables.png" alt="테이블 결과">
+</kbd>
 
 ---
 
