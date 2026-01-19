@@ -49,15 +49,15 @@
    - 상단 검색창에 "Resource groups" 입력
    - 또는 왼쪽 메뉴에서 "Resource groups" 클릭
 
-   <kbd>
-  <img src="./images/01-01-resource-group-search.png" alt="리소스 그룹 검색">
+<kbd>
+<img src="./images/01-01-resource-group-search.png" alt="리소스 그룹 검색">
 </kbd>
 
 3. **새 리소스 그룹 생성**
    - `+ Create` 버튼 클릭
 
-   <kbd>
-  <img src="./images/01-02-resource-group-create-button.png" alt="리소스 그룹 생성 버튼">
+<kbd>
+<img src="./images/01-02-resource-group-create-button.png" alt="리소스 그룹 생성 버튼">
 </kbd>
 
 4. **기본 정보 입력**
@@ -68,16 +68,16 @@
    | Resource group | `rg-doc-intelligence-lab` | 리소스 그룹 이름 |
    | Region | `Korea Central` | 가장 가까운 지역 선택 |
 
-   <kbd>
-  <img src="./images/01-03-resource-group-settings.png" alt="리소스 그룹 설정">
+<kbd>
+<img src="./images/01-03-resource-group-settings.png" alt="리소스 그룹 설정">
 </kbd>
 
 5. **검토 및 생성**
    - `Review + create` 클릭
    - 검증 통과 후 `Create` 클릭
 
-   <kbd>
-  <img src="./images/01-04-resource-group-created.png" alt="리소스 그룹 생성 완료">
+<kbd>
+<img src="./images/01-04-resource-group-created.png" alt="리소스 그룹 생성 완료">
 </kbd>
 
 ---
@@ -92,8 +92,8 @@ Blob Storage는 문서 파일을 저장하는 데 사용됩니다.
    - 상단 검색창에 "Storage accounts" 입력
    - "Storage accounts" 클릭
 
-   <kbd>
-  <img src="./images/01-05-storage-search.png" alt="Storage Account 검색">
+<kbd>
+<img src="./images/01-05-storage-search.png" alt="Storage Account 검색">
 </kbd>
 
 2. **새 Storage Account 생성**
@@ -113,16 +113,16 @@ Blob Storage는 문서 파일을 저장하는 데 사용됩니다.
 
    > ⚠️ **주의**: Storage account name은 Azure 전체에서 고유해야 합니다. 본인의 이니셜이나 날짜를 추가하세요. (예: `stdocintellab0115`)
 
-   <kbd>
-  <img src="./images/01-06-storage-basics.png" alt="Storage Account 기본 설정">
+<kbd>
+<img src="./images/01-06-storage-basics.png" alt="Storage Account 기본 설정">
 </kbd>
 
 <!-- 4. **고급 설정 (Advanced 탭)** 
    - `Allow enabling anonymous access on individual containers`: **체크** (실습 편의를 위해)
    - 나머지는 기본값 유지
 
-   <kbd>
-  <img src="./images/01-07-storage-advanced.png" alt="Storage Account 고급 설정">
+<kbd>
+<img src="./images/01-07-storage-advanced.png" alt="Storage Account 고급 설정">
 </kbd> -->
 
 5. **검토 및 생성**
@@ -130,8 +130,8 @@ Blob Storage는 문서 파일을 저장하는 데 사용됩니다.
    - 검증 통과 후 `Create` 클릭
    - 배포 완료까지 약 1-2분 소요
 
-   <kbd>
-  <img src="./images/01-08-storage-created.png" alt="Storage Account 생성 완료">
+<kbd>
+<img src="./images/01-08-storage-created.png" alt="Storage Account 생성 완료">
 </kbd>
 
 <!-- 
@@ -142,7 +142,7 @@ Blob Storage는 문서 파일을 저장하는 데 사용됩니다.
     - 저장 (Save) 클릭
 
     <kbd>
-  <img src="./images/01-08-entra-authorization.png" alt="Entra authorization 설정">
+<img src="./images/01-08-entra-authorization.png" alt="Entra authorization 설정">
 </kbd> -->
 
 
@@ -155,8 +155,8 @@ Blob Storage는 문서 파일을 저장하는 데 사용됩니다.
    - 왼쪽 메뉴에서 `Data storage` > `Containers` 클릭
    - `+ Container` 버튼 클릭
 
-   <kbd>
-  <img src="./images/01-09-container-create.png" alt="Container 생성">
+<kbd>
+<img src="./images/01-09-container-create.png" alt="Container 생성">
 </kbd>
 
 3. **Container 설정**
@@ -169,14 +169,14 @@ Blob Storage는 문서 파일을 저장하는 데 사용됩니다.
 
    > 🔒 **보안 참고**: Private으로 설정하면 익명 접근이 차단됩니다. AI Search에서는 **연결 문자열(Connection String)** 또는 **Managed Identity**를 통해 안전하게 접근합니다.
 
-   <kbd>
-  <img src="./images/01-10-container-settings.png" alt="Container 설정">
+<kbd>
+<img src="./images/01-10-container-settings.png" alt="Container 설정">
 </kbd>
 
 4. **Create 클릭하여 생성 완료**
 
-   <kbd>
-  <img src="./images/01-10-container-created.png" alt="Container 완료">
+<kbd>
+<img src="./images/01-10-container-created.png" alt="Container 완료">
 </kbd>
 
 5. **Container 추가 생성**
@@ -200,8 +200,8 @@ Document Intelligence 는 문서에서 텍스트, 테이블, 구조 등을 추�
    - 상단 검색창에 "Document Intelligence" 입력
    - "Document Intelligence" 클릭
 
-   <kbd>
-  <img src="./images/01-11-doc-intel-search.png" alt="Document Intelligence 검색">
+<kbd>
+<img src="./images/01-11-doc-intel-search.png" alt="Document Intelligence 검색">
 </kbd>
 
 2. **새 Document Intelligence 생성**
@@ -217,15 +217,15 @@ Document Intelligence 는 문서에서 텍스트, 테이블, 구조 등을 추�
    | Name | `doc-intel-lab-[고유번호]` | 전역적으로 고유해야 함 |
    | Pricing tier | `Standard S0` | Standard 권장 |
 
-   <kbd>
-  <img src="./images/01-12-doc-intel-settings.png" alt="Document Intelligence 설정">
+<kbd>
+<img src="./images/01-12-doc-intel-settings.png" alt="Document Intelligence 설정">
 </kbd>
 
 4. **네트워크 설정 (Networking 탭)**
    - `All networks, including the internet, can access this resource` 선택
 
-   <kbd>
-  <img src="./images/01-13-doc-intel-network.png" alt="Document Intelligence 네트워크 설정">
+<kbd>
+<img src="./images/01-13-doc-intel-network.png" alt="Document Intelligence 네트워크 설정">
 </kbd>
 
 5. **검토 및 생성**
@@ -233,8 +233,8 @@ Document Intelligence 는 문서에서 텍스트, 테이블, 구조 등을 추�
    - 검증 통과 후 `Create` 클릭
    - 배포 완료까지 약 1-2분 소요
 
-   <kbd>
-  <img src="./images/01-14-doc-intel-created.png" alt="Document Intelligence 생성 완료">
+<kbd>
+<img src="./images/01-14-doc-intel-created.png" alt="Document Intelligence 생성 완료">
 </kbd>
 
 ---
@@ -249,8 +249,8 @@ Document Intelligence를 AI Search와 직접 연동하여 사용할 때는 Azure
    - 상단 검색창에 "Azure AI services" 입력
    - "Azure AI services" 클릭
 
-   <kbd>
-  <img src="./images/01-14-00-create_azure_ai_search.png" alt="Azure AI Services 검색">
+<kbd>
+<img src="./images/01-14-00-create_azure_ai_search.png" alt="Azure AI Services 검색">
 </kbd>
 
 2. **새 Azure AI Services 생성**
@@ -269,24 +269,24 @@ Document Intelligence를 AI Search와 직접 연동하여 사용할 때는 Azure
 
    > 💡 **팁**: Multi-services 리소스는 Document Intelligence, Computer Vision, Language 등 여러 서비스를 하나의 키로 사용할 수 있어 관리가 편리합니다.
 
-   <kbd>
-  <img src="./images/01-14-01-create_azure_ai.png" alt="Azure AI Services 기본 설정">
+<kbd>
+<img src="./images/01-14-01-create_azure_ai.png" alt="Azure AI Services 기본 설정">
 </kbd>
 
 4. **네트워크 설정 (Networking 탭)**
    - `All networks, including the internet, can access this resource` 선택
    - 실습 환경에서는 모든 네트워크 접근 허용
 
-   <kbd>
-  <img src="./images/01-14-02-create_azure_ai_network.png" alt="Azure AI Services 네트워크 설정">
+<kbd>
+<img src="./images/01-14-02-create_azure_ai_network.png" alt="Azure AI Services 네트워크 설정">
 </kbd>
 
 5. **ID 설정 (Identity 탭)**
    - System assigned managed identity: `On` 선택
    - Managed Identity를 활성화하면 다른 Azure 리소스와 안전하게 연동 가능
 
-   <kbd>
-  <img src="./images/01-14-03-create_azure_ai_identity.png" alt="Azure AI Services ID 설정">
+<kbd>
+<img src="./images/01-14-03-create_azure_ai_identity.png" alt="Azure AI Services ID 설정">
 </kbd>
 
 6. **검토 및 생성**
@@ -294,8 +294,8 @@ Document Intelligence를 AI Search와 직접 연동하여 사용할 때는 Azure
    - 검증 통과 후 `Create` 클릭
    - 배포 완료까지 약 1-2분 소요
 
-   <kbd>
-  <img src="./images/01-14-04-create_azure_ai_done.png" alt="Azure AI Services 생성 완료">
+<kbd>
+<img src="./images/01-14-04-create_azure_ai_done.png" alt="Azure AI Services 생성 완료">
 </kbd>
 
 ### Document Intelligence vs Multi-services 비교
@@ -318,8 +318,8 @@ AI Search(구 Cognitive Search)는 전문 검색 서비스로, Document Intellig
    - 상단 검색창에 "AI Search" 또는 "Search services" 입력
    - "AI Search" 클릭
 
-   <kbd>
-  <img src="./images/01-15-ai-search-search.png" alt="AI Search 검색">
+<kbd>
+<img src="./images/01-15-ai-search-search.png" alt="AI Search 검색">
 </kbd>
 
 2. **새 Search Service 생성**
@@ -337,8 +337,8 @@ AI Search(구 Cognitive Search)는 전문 검색 서비스로, Document Intellig
 
    > ⚠️ **주의**: Free tier는 구독당 1개만 생성 가능합니다. 이미 있다면 `Basic` tier를 선택하세요.
 
-   <kbd>
-  <img src="./images/01-16-ai-search-basics.png" alt="AI Search 기본 설정">
+<kbd>
+<img src="./images/01-16-ai-search-basics.png" alt="AI Search 기본 설정">
 </kbd>
 
 4. **가격 책정 계층 선택**
@@ -349,8 +349,8 @@ AI Search(구 Cognitive Search)는 전문 검색 서비스로, Document Intellig
    | Free | 50MB 스토리지, 10,000 문서, 인덱스 3개 |
    | Basic | 2GB 스토리지, 1백만 문서, 인덱스 15개 |
 
-   <kbd>
-  <img src="./images/01-17-ai-search-pricing.png" alt="AI Search 가격 설정">
+<kbd>
+<img src="./images/01-17-ai-search-pricing.png" alt="AI Search 가격 설정">
 </kbd>
 
 5. **검토 및 생성**
@@ -358,8 +358,8 @@ AI Search(구 Cognitive Search)는 전문 검색 서비스로, Document Intellig
    - 검증 통과 후 `Create` 클릭
    - 배포 완료까지 약 2-5분 소요
 
-   <kbd>
-  <img src="./images/01-18-ai-search-created.png" alt="AI Search 생성 완료">
+<kbd>
+<img src="./images/01-18-ai-search-created.png" alt="AI Search 생성 완료">
 </kbd>
 
 ---
@@ -377,14 +377,14 @@ Microsoft Foundry는 AI 모델을 배포하고 관리하는 통합 플랫폼입�
    - "Microsoft Foundry" 클릭
 
     <kbd>
-  <img src="./images/01-19-ms-foundry-search.png" alt="Microsoft Foundry 검색">
+<img src="./images/01-19-ms-foundry-search.png" alt="Microsoft Foundry 검색">
 </kbd>
 
 2. **새 Foundry 생성**
    - `Create a Foundry Resource` 버튼 클릭
 
     <kbd>
-  <img src="./images/01-20-ms-foundry-create.png" alt="Microsoft Foundry 생성">
+<img src="./images/01-20-ms-foundry-create.png" alt="Microsoft Foundry 생성">
 </kbd>
 
 3. **기본 정보 입력 (Basics 탭)**
@@ -398,8 +398,8 @@ Microsoft Foundry는 AI 모델을 배포하고 관리하는 통합 플랫폼입�
 
    > 💡 **팁**: Region은 사용하려는 AI 모델(GPT-4o, text-embedding-3 등)이 지원되는 지역을 선택하세요.
 
-   <kbd>
-  <img src="./images/01-21-ms-foundry-basics.png" alt="Microsoft Foundry 기본 설정">
+<kbd>
+<img src="./images/01-21-ms-foundry-basics.png" alt="Microsoft Foundry 기본 설정">
 </kbd>
 
 4. **검토 및 생성**
@@ -407,8 +407,8 @@ Microsoft Foundry는 AI 모델을 배포하고 관리하는 통합 플랫폼입�
    - 검증 통과 후 `Create` 클릭
    - 배포 완료까지 약 3-5분 소요
 
-   <kbd>
-  <img src="./images/01-23-ms-foundry-created.png" alt="Microsoft Foundry 생성 완료">
+<kbd>
+<img src="./images/01-23-ms-foundry-created.png" alt="Microsoft Foundry 생성 완료">
 </kbd>
 
 #### 7.2 Microsoft Foundry Portal 접속
@@ -419,8 +419,8 @@ Microsoft Foundry는 AI 모델을 배포하고 관리하는 통합 플랫폼입�
 2. **Foundry Portal 이동**
    - Overview 페이지에서 `Go to Foundry portal` 버튼 클릭
 
-   <kbd>
-  <img src="./images/01-25-ms-foundry-go-to-portal.png" alt="Go to Foundry Portal">
+<kbd>
+<img src="./images/01-25-ms-foundry-go-to-portal.png" alt="Go to Foundry Portal">
 </kbd>
 
 
@@ -435,8 +435,8 @@ Microsoft Foundry는 AI 모델을 배포하고 관리하는 통합 플랫폼입�
    - `+ Deploy model` 버튼 클릭
    - `Deploy base model` 선택
 
-   <kbd>
-  <img src="./images/01-29-ms-foundry-deploy-button.png" alt="Deploy model 버튼">
+<kbd>
+<img src="./images/01-29-ms-foundry-deploy-button.png" alt="Deploy model 버튼">
 </kbd>
 
 3. **GPT-4o 모델 배포** (텍스트 생성용)
@@ -449,8 +449,8 @@ Microsoft Foundry는 AI 모델을 배포하고 관리하는 통합 플랫폼입�
 
    - `Deploy` 클릭
 
-   <kbd>
-  <img src="./images/01-30-ms-foundry-gpt4o-deploy.png" alt="GPT-4o 배포 설정">
+<kbd>
+<img src="./images/01-30-ms-foundry-gpt4o-deploy.png" alt="GPT-4o 배포 설정">
 </kbd>
 
 4. **text-embedding-3-large 모델 배포** (벡터 검색용)
@@ -465,8 +465,8 @@ Microsoft Foundry는 AI 모델을 배포하고 관리하는 통합 플랫폼입�
 
    - `Deploy` 클릭
 
-   <kbd>
-  <img src="./images/01-31-ms-foundry-embedding-deploy.png" alt="Embedding 모델 배포 설정">
+<kbd>
+<img src="./images/01-31-ms-foundry-embedding-deploy.png" alt="Embedding 모델 배포 설정">
 </kbd>
 
 5. **배포 완료 확인**
@@ -477,8 +477,8 @@ Microsoft Foundry는 AI 모델을 배포하고 관리하는 통합 플랫폼입�
    | `gpt-4o` | 문서 요약, Q&A, 텍스트 생성 |
    | `text-embedding-3-large` | 의미 기반 벡터 검색 |
 
-   <kbd>
-  <img src="./images/01-32-ms-foundry-models-deployed.png" alt="모델 배포 완료">
+<kbd>
+<img src="./images/01-32-ms-foundry-models-deployed.png" alt="모델 배포 완료">
 </kbd>
 
 > 📝 **참고**: 모델 배포 후 API 호출에 사용할 엔드포인트와 키는 각 모델의 상세 페이지에서 확인할 수 있습니다.

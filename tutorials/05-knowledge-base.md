@@ -28,8 +28,8 @@ Azure AI Search의 Knowledge Base는 인덱싱된 문서 데이터를 기반으�
 1. **AI Search > Agentic retrieval > Knowledge sources 메뉴 클릭**
 2. **`+ Add knowledge source` 클릭**
 
-   <kbd>
-  <img src="./images/05-01-knowledge-sources-menu.png" alt="Knowledge sources 메뉴">
+<kbd>
+<img src="./images/05-01-knowledge-sources-menu.png" alt="Knowledge sources 메뉴">
 </kbd>
 
 ### 2.2 Knowledge source 설정
@@ -42,8 +42,8 @@ Azure AI Search의 Knowledge Base는 인덱싱된 문서 데이터를 기반으�
    | Index | `multimodal-rag-1234` | 앞서 생성한 인덱스 |
    | Source field | `전체 선택` | 검색할 콘텐츠 필드 |
 
-   <kbd>
-  <img src="./images/05-02-knowledge-source-create.png" alt="Knowledge source 설정">
+<kbd>
+<img src="./images/05-02-knowledge-source-create.png" alt="Knowledge source 설정">
 </kbd>
 
 3. **Create 클릭**
@@ -52,8 +52,8 @@ Azure AI Search의 Knowledge Base는 인덱싱된 문서 데이터를 기반으�
 
 1. **Knowledge sources 목록에서 생성된 항목 확인**
 
-   <kbd>
-  <img src="./images/05-03-knowledge-source-complete.png" alt="Knowledge source 생성 완료">
+<kbd>
+<img src="./images/05-03-knowledge-source-complete.png" alt="Knowledge source 생성 완료">
 </kbd>
 
 ---
@@ -67,8 +67,8 @@ Knowledge source를 기반으로 Knowledge base를 생성합니다.
 1. **AI Search > Agentic retrieval > Knowledge bases 메뉴 클릭**
 2. **`+ Add knowledge base` 클릭**
 
-   <kbd>
-  <img src="./images/05-04-knowledge-bases-menu.png" alt="Knowledge bases 메뉴">
+<kbd>
+<img src="./images/05-04-knowledge-bases-menu.png" alt="Knowledge bases 메뉴">
 </kbd>
 
 ### 3.2 Knowledge base 설정
@@ -98,8 +98,8 @@ Low level 이상의 Agentic Retrieval 기능을 사용하려면 Azure OpenAI 모
    | Azure OpenAI service | `ms-foundry-lab-[고유번호]` | Microsoft Foundry 리소스 |
    | Chat model deployment | `gpt-4o` | 대화 생성 모델 |
 
-   <kbd>
-  <img src="./images/05-06-knowledge-base-ai-model.png" alt="AI 모델 연결">
+<kbd>
+<img src="./images/05-06-knowledge-base-ai-model.png" alt="AI 모델 연결">
 </kbd>
 
 3. **응답 모드 설정**
@@ -125,8 +125,8 @@ Low level 이상의 Agentic Retrieval 기능을 사용하려면 Azure OpenAI 모
 3. **결과 확인**:
    - 관련 문서 청크가 검색됨
    - AI 모델이 연결된 경우 답변도 생성됨
-   <kbd>
-  <img src="./images/05-07-knowledge-base-test.png" alt="Knowledge base 생성 완료">
+<kbd>
+<img src="./images/05-07-knowledge-base-test.png" alt="Knowledge base 생성 완료">
 </kbd>
 
 

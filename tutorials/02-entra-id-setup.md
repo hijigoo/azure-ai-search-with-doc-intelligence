@@ -54,8 +54,8 @@ AI Search가 다른 Azure 리소스에 안전하게 접근할 수 있도록 Syst
 
 4. **Save 클릭**
 
-   <kbd>
-  <img src="./images/02-01-ai-search-identity.png" alt="AI Search Identity 설정">
+<kbd>
+<img src="./images/02-01-ai-search-identity.png" alt="AI Search Identity 설정">
 </kbd>
 
 5. **Object ID 메모** (역할 할당 시 사용)
@@ -81,8 +81,8 @@ AI Search가 Blob Storage의 문서를 읽고, Knowledge Store에 데이터를 �
 3. **역할 할당 추가**
    - `+ Add` > `Add role assignment` 클릭
 
-   <kbd>
-  <img src="./images/02-03-storage-iam-add.png" alt="Storage IAM 추가">
+<kbd>
+<img src="./images/02-03-storage-iam-add.png" alt="Storage IAM 추가">
 </kbd>
 
 4. **Role 탭에서 역할 선택**
@@ -94,8 +94,8 @@ AI Search가 Blob Storage의 문서를 읽고, Knowledge Store에 데이터를 �
    |------|------|
    | Storage Blob Data Contributor | Blob 데이터 읽기/쓰기 |
 
-   <kbd>
-  <img src="./images/02-04-storage-role-select.png" alt="Storage 역할 선택">
+<kbd>
+<img src="./images/02-04-storage-role-select.png" alt="Storage 역할 선택">
 </kbd>
 
 5. **Members 탭에서 멤버 추가**
@@ -112,7 +112,7 @@ AI Search가 Blob Storage의 문서를 읽고, Knowledge Store에 데이터를 �
       - `Select` 클릭
     
     <kbd>
-  <img src="./images/02-05-storage-member-select.png" alt="Storage 멤버 선택">
+<img src="./images/02-05-storage-member-select.png" alt="Storage 멤버 선택">
 </kbd>
 
 6. **Review + assign 클릭하여 역할 할당 완료**
@@ -143,8 +143,8 @@ AI Search가 Document Intelligence를 사용할 수 있도록 역할을 할당�
    |------|------|
    | Cognitive Services User | API 호출 권한 |
 
-   <kbd>
-  <img src="./images/02-07-doc-intel-role-select.png" alt="Document Intelligence 역할 선택">
+<kbd>
+<img src="./images/02-07-doc-intel-role-select.png" alt="Document Intelligence 역할 선택">
 </kbd>
 
 5. **Members 탭에서 AI Search 추가**
@@ -154,8 +154,8 @@ AI Search가 Document Intelligence를 사용할 수 있도록 역할을 할당�
    - 앞서 생성한 AI Search 서비스 선택
    - `Select` 클릭
 
-   <kbd>
-  <img src="./images/02-08-doc-intel-member-select.png" alt="Document Intelligence 멤버 선택">
+<kbd>
+<img src="./images/02-08-doc-intel-member-select.png" alt="Document Intelligence 멤버 선택">
 </kbd>
 
 6. **Review + assign 클릭하여 역할 할당 완료**
@@ -188,8 +188,8 @@ AI Search가 Microsoft Foundry의 GPT-4o 및 text-embedding-3-large 모델을 �
    |------|------|
    | Cognitive Services OpenAI User | 모델 배포 읽기 및 추론 작업 |
 
-   <kbd>
-  <img src="./images/02-11-foundry-role-select.png" alt="Foundry 역할 선택">
+<kbd>
+<img src="./images/02-11-foundry-role-select.png" alt="Foundry 역할 선택">
 </kbd>
 
 5. **Members 탭에서 멤버 추가**
@@ -199,8 +199,8 @@ AI Search가 Microsoft Foundry의 GPT-4o 및 text-embedding-3-large 모델을 �
    - 앞서 생성한 AI Search 서비스 선택
    - `Select` 클릭
 
-   <kbd>
-  <img src="./images/02-12-foundry-member-select.png" alt="Foundry 멤버 선택">
+<kbd>
+<img src="./images/02-12-foundry-member-select.png" alt="Foundry 멤버 선택">
 </kbd>
 
 6. **Review + assign 클릭하여 역할 할당 완료**
