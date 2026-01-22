@@ -180,7 +180,7 @@ Blob Storage는 문서 파일을 저장하는 데 사용됩니다.
   
     | 필드 | 값 | 설명 |
    |------|-----|------|
-   | Name | `output` | Document Intelligence 출력 저장 컨테이너d |
+   | Name | `output` | Document Intelligence 출력 저장 컨테이너 |
    | Anonymous access level | `Private (no anonymous access)` | 보안을 위해 Private 설정 |
 
 <kbd>
