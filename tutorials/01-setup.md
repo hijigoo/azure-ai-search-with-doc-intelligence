@@ -66,7 +66,7 @@
    |------|-----|------|
    | Subscription | 본인 구독 선택 | 사용할 Azure 구독 |
    | Resource group | `rg-doc-intelligence-lab` | 리소스 그룹 이름 |
-   | Region | `East US` | 지역 설정 |
+   | Region | `East US 2` | 지역 설정 |
 
 <kbd>
 <img src="./images/01-03-resource-group-settings_east_us.png" alt="리소스 그룹 설정">
@@ -106,7 +106,7 @@ Blob Storage는 문서 파일을 저장하는 데 사용됩니다.
    | Subscription | 본인 구독 선택 | |
    | Resource group | `rg-doc-intelligence-lab` | 앞서 생성한 리소스 그룹 |
    | Storage account name | `stdocintellab[고유번호]` | 전역적으로 고유해야 함 (소문자, 숫자만) |
-   | Region | `East US` | 리소스 그룹과 동일 지역 |
+   | Region | `East US 2` | 리소스 그룹과 동일 지역 |
    | Primary service | `Azure Blob Storage or Azure Data Lake Storage Gen2` | 문서 저장용 Blob 선택 |
    | Performance | `Standard` | 실습용으로 충분 |
    | Redundancy | `LRS` (Locally-redundant storage) | 비용 절ㅌ약을 위해 선택 |
@@ -212,7 +212,7 @@ Document Intelligence 는 문서에서 텍스트, 테이블, 구조 등을 추�
    |------|-----|------|
    | Subscription | 본인 구독 선택 | |
    | Resource group | `rg-doc-intelligence-lab` | |
-   | Region | `East US` | 기능 가용성 확인 필요 |
+   | Region | `East US 2` | 기능 가용성 확인 필요 |
    | Name | `doc-intel-lab-[고유번호]` | 전역적으로 고유해야 함 |
    | Pricing tier | `Standard S0` | Standard 권장 |
 
@@ -262,7 +262,7 @@ Document Intelligence를 AI Search와 직접 연동하여 사용할 때는 Azure
    |------|-----|------|
    | Subscription | 본인 구독 선택 | |
    | Resource group | `rg-doc-intelligence-lab` | 앞서 생성한 리소스 그룹 |
-   | Region | `East US` | AI Search와 동일 지역 권장 |
+   | Region | `East US 2` | AI Search와 동일 지역 권장 |
    | Name | `ai-services-lab-[고유번호]` | 전역적으로 고유해야 함 |
    | Pricing tier | `Standard S0` | 표준 요금제 |
 
@@ -331,7 +331,7 @@ AI Search(구 Cognitive Search)는 전문 검색 서비스로, Document Intellig
    | Subscription | 본인 구독 선택 | |
    | Resource group | `rg-doc-intelligence-lab` | |
    | Service name | `search-doc-lab-[고유번호]` | 전역적으로 고유해야 함 |
-   | Location | `East US` | |
+   | Location | `East US 2` | |
    | Pricing tier | `Free` | 혹은 `Basic` |
 
    > ⚠️ **주의**: Free tier는 구독당 1개만 생성 가능합니다. 이미 있다면 `Basic` tier를 선택하세요.
