@@ -106,15 +106,15 @@ Blob Storage는 문서 파일을 저장하는 데 사용됩니다.
    | Subscription | 본인 구독 선택 | |
    | Resource group | `rg-doc-intelligence-lab` | 앞서 생성한 리소스 그룹 |
    | Storage account name | `stdocintellab[고유번호]` | 전역적으로 고유해야 함 (소문자, 숫자만) |
-   | Region | `Korea Central` | 리소스 그룹과 동일 지역 |
+   | Region | `East US` | 리소스 그룹과 동일 지역 |
    | Primary service | `Azure Blob Storage or Azure Data Lake Storage Gen2` | 문서 저장용 Blob 선택 |
    | Performance | `Standard` | 실습용으로 충분 |
-   | Redundancy | `LRS` (Locally-redundant storage) | 비용 절약을 위해 선택 |
+   | Redundancy | `LRS` (Locally-redundant storage) | 비용 절ㅌ약을 위해 선택 |
 
    > ⚠️ **주의**: Storage account name은 Azure 전체에서 고유해야 합니다. 본인의 이니셜이나 날짜를 추가하세요. (예: `stdocintellab0115`)
 
 <kbd>
-<img src="./images/01-06-storage-basics.png" alt="Storage Account 기본 설정">
+<img src="./images/01-06-storage-basics_east_us.png" alt="Storage Account 기본 설정">
 </kbd>
 
 <!-- 4. **고급 설정 (Advanced 탭)** 
@@ -125,7 +125,7 @@ Blob Storage는 문서 파일을 저장하는 데 사용됩니다.
 <img src="./images/01-07-storage-advanced.png" alt="Storage Account 고급 설정">
 </kbd> -->
 
-5. **검토 및 생성**
+1. **검토 및 생성**
    - `Review + create` 클릭
    - 검증 통과 후 `Create` 클릭
    - 배포 완료까지 약 1-2분 소요
@@ -175,10 +175,6 @@ Blob Storage는 문서 파일을 저장하는 데 사용됩니다.
 
 4. **Create 클릭하여 생성 완료**
 
-<kbd>
-<img src="./images/01-10-container-created.png" alt="Container 완료">
-</kbd>
-
 5. **Container 추가 생성**
     - 동일한 방법으로 `output` 컨테이너 생성합니다.
   
@@ -187,6 +183,9 @@ Blob Storage는 문서 파일을 저장하는 데 사용됩니다.
    | Name | `output` | Document Intelligence 출력 저장 컨테이너d |
    | Anonymous access level | `Private (no anonymous access)` | 보안을 위해 Private 설정 |
 
+<kbd>
+<img src="./images/01-10-container-created.png" alt="Container 완료">
+</kbd>
 
 ---
 
