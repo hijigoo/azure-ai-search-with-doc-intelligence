@@ -30,10 +30,11 @@
 
 | 리소스 | 할당할 역할 | 대상 | 용도 |
 |--------|------------|------|------|
-| Storage Account | Storage Blob Data Contributor | AI Search | 문서 파일 읽기 및 데이터 저장 |
-| Document Intelligence | Cognitive Services User | AI Search | 문서 분석 API 호출 |
-| Document Intelligence | Cognitive Services User | 사용자 계정 | 직접 API 테스트 |
-| Microsoft Foundry | Cognitive Services OpenAI User | AI Search | 임베딩/검색 모델 호출 |
+| Storage Account | Storage Blob Data Contributor | AI Search | AI Search → Blob Storage 문서 읽기/쓰기 |
+| Document Intelligence | Cognitive Services User | AI Search | AI Search → Document Intelligence 문서 분석 API 호출 |
+| Document Intelligence | Cognitive Services User | 사용자 계정 | 로컬 개발 환경 → Document Intelligence API 테스트 |
+| Microsoft Foundry | Cognitive Services OpenAI User | AI Search | AI Search → GPT-4o/Embedding 모델 호출 |
+
 ---
 
 ## 2. AI Search Managed Identity 활성화
