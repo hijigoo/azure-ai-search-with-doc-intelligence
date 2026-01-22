@@ -67,7 +67,7 @@ AI Search가 다른 Azure 리소스에 안전하게 접근할 수 있도록 Syst
 
 ## 3. Storage Account에 역할 할당
 
-AI Search가 Blob Storage의 문서를 읽고, Knowledge Store에 데이터를 저장할 수 있도록 역할을 할당합니다.
+AI Search가 Blob Storage의 문서를 읽고, Knowledge Store에 데이터를 저장할 수 있도록 역할을 할당합니다. 또한 사용자도 Blob Storage에 접근할 수 있도록 권한을 부여합니다.
 
 > 💡 **참고**: Storage Blob Data Contributor 역할은 읽기와 쓰기 권한을 모두 포함하므로, 하나의 역할만 할당하면 됩니다.
 
@@ -127,15 +127,29 @@ AI Search가 Document Intelligence를 사용할 수 있도록 역할을 할당�
 ### 단계별 가이드
 
 1. **Document Intelligence 리소스로 이동**
-   - Azure Portal에서 앞서 생성한 Document Intelligence로 이동
+   - Resource Group 으로 이동 후 앞서 생성한 Resource Group 을 클릭
+   - Document Intelligence 리소스를 선택
+   
+<kbd>
+<img src="./images/02-06-01-doc-intel.png" alt="Document Intelligence 역할 선택">
+</kbd>
 
-2. **Access Control (IAM) 메뉴 이동**
+<kbd>
+<img src="./images/02-06-02-doc-intel.png" alt="Document Intelligence 역할 선택">
+</kbd>
+
+<kbd>
+<img src="./images/02-06-03-doc-intel.png" alt="Document Intelligence 역할 선택">
+</kbd>
+
+
+1. **Access Control (IAM) 메뉴 이동**
    - 왼쪽 메뉴에서 `Access Control (IAM)` 클릭
 
-3. **역할 할당 추가**
+2. **역할 할당 추가**
    - `+ Add` > `Add role assignment` 클릭
 
-4. **Role 탭에서 역할 선택**
+3. **Role 탭에서 역할 선택**
    - 검색창에 "Cognitive Services User" 입력
    - `Cognitive Services User` 선택
    - `Next` 클릭
