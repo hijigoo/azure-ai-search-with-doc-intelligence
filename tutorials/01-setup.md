@@ -66,13 +66,13 @@
    |------|-----|------|
    | Subscription | 본인 구독 선택 | 사용할 Azure 구독 |
    | Resource group | `rg-doc-intelligence-lab` | 리소스 그룹 이름 |
-   | Region | `Korea Central` | 가장 가까운 지역 선택 |
+   | Region | `East US` | 지역 설정 |
 
 <kbd>
-<img src="./images/01-03-resource-group-settings.png" alt="리소스 그룹 설정">
+<img src="./images/01-03-resource-group-settings_east_us.png" alt="리소스 그룹 설정">
 </kbd>
 
-5. **검토 및 생성**
+1. **검토 및 생성**
    - `Review + create` 클릭
    - 검증 통과 후 `Create` 클릭
 
