@@ -112,9 +112,21 @@ OCR/Read 모델은 순수 OCR 기능으로, 텍스트만 빠르게 추출할 때
 ### 6.1 OCR/Read 모델 선택
 
 1. **Document Intelligence Studio 메인 화면에서 `OCR/Read` 선택**
-    <kbd>
+
+<kbd>
 <img src="./images/03-05-studio-read-select.png" alt="OCR/Read 선택">
 </kbd>
+
+(리소스를 찾을 수 없다는 메세지가 나오면 앞서 생성한 리소스를 연결합니다.)
+
+<kbd>
+<img src="./images/03-05-01-studio-resource.png" alt="OCR/Read 선택">
+</kbd>
+
+<kbd>
+<img src="./images/03-05-02-studio-resource.png" alt="OCR/Read 선택">
+</kbd>
+
 
 ### 6.2 문서 업로드 및 분석
 
@@ -130,6 +142,10 @@ OCR/Read 모델은 순수 OCR 기능으로, 텍스트만 빠르게 추출할 때
    - **Optional output**: Searchable PDF (검색 가능한 PDF 출력)
    - **Optional detection**: Barcodes, Language
    - **Premium detection**: High resolution, Style font, Formulas
+
+<kbd>
+<img src="./images/03-06-studio-text_analysis_option.png" alt="Layout 선택">
+</kbd>
 
 3. **`Run analysis` 버튼 클릭**
     <kbd>
@@ -175,6 +191,10 @@ Layout 모델은 문서의 텍스트, 테이블, 체크박스, 구조 정보를 
    - **Optional output**: Figure image
    - **Optional detection**: Barcodes, Language, Key-value pairs
    - **Premium detection**: High resolution, Style font, Formulas
+
+<kbd>
+<img src="./images/03-09-studio-layout-option.png" alt="Layout 선택">
+</kbd>
 
 3. **`Run analysis` 버튼 클릭**
     <kbd>
