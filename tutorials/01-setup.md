@@ -189,7 +189,7 @@ Blob Storage는 문서 파일을 저장하는 데 사용됩니다.
 
 ---
 
-## 4. Azure Document Intelligence 생성
+## 4. (Skip, 5번 진행) Azure Document Intelligence 생성
 
 Document Intelligence 는 문서에서 텍스트, 테이블, 구조 등을 추출하는 AI 서비스입니다. Document Intelligence 를 독립적으로 사용할 때는 이 방식을 선택합니다. **만약 AI Search 와 직접 연동하여 사용할 경우, Azure AI 서비스 (Multi-services) 를 생성합니다.**
 
