@@ -189,56 +189,7 @@ Blob Storage는 문서 파일을 저장하는 데 사용됩니다.
 
 ---
 
-## 4. (Skip, 5번 진행) Azure Document Intelligence 생성
-
-Document Intelligence 는 문서에서 텍스트, 테이블, 구조 등을 추출하는 AI 서비스입니다. Document Intelligence 를 독립적으로 사용할 때는 이 방식을 선택합니다. **만약 AI Search 와 직접 연동하여 사용할 경우, Azure AI 서비스 (Multi-services) 를 생성합니다.**
-
-### 단계별 가이드
-
-1. **Document Intelligence 메뉴 이동**
-   - 상단 검색창에 "Document Intelligence" 입력
-   - "Document Intelligence" 클릭
-
-<kbd>
-<img src="./images/01-11-doc-intel-search.png" alt="Document Intelligence 검색">
-</kbd>
-
-2. **새 Document Intelligence 생성**
-   - `+ Create` 버튼 클릭
-
-3. **기본 정보 입력**
-
-   | 필드 | 값 | 설명 |
-   |------|-----|------|
-   | Subscription | 본인 구독 선택 | |
-   | Resource group | `rg-doc-intelligence-lab` | |
-   | Region | `East US` | 기능 가용성 확인 필요 |
-   | Name | `doc-intel-lab-[고유번호]` | 전역적으로 고유해야 함 |
-   | Pricing tier | `Standard S0` | Standard 권장 |
-
-<kbd>
-<img src="./images/01-12-doc-intel-settings.png" alt="Document Intelligence 설정">
-</kbd>
-
-4. **네트워크 설정 (Networking 탭)**
-   - `All networks, including the internet, can access this resource` 선택
-
-<kbd>
-<img src="./images/01-13-doc-intel-network.png" alt="Document Intelligence 네트워크 설정">
-</kbd>
-
-5. **검토 및 생성**
-   - `Review + create` 클릭
-   - 검증 통과 후 `Create` 클릭
-   - 배포 완료까지 약 1-2분 소요
-
-<kbd>
-<img src="./images/01-14-doc-intel-created.png" alt="Document Intelligence 생성 완료">
-</kbd>
-
----
-
-## 5. Azure AI Search 생성
+## 4. Azure AI Search 생성
 
 AI Search는 전문 검색 서비스로, Document Intelligence와 연동하여 문서 검색을 제공합니다.
 
@@ -298,6 +249,55 @@ AI Search는 전문 검색 서비스로, Document Intelligence와 연동하여 �
 
 <kbd>
 <img src="./images/01-18-ai-search-created.png" alt="AI Search 생성 완료">
+</kbd>
+
+---
+
+## 5. (Skip, 6번 진행) Azure Document Intelligence 생성
+
+Document Intelligence 는 문서에서 텍스트, 테이블, 구조 등을 추출하는 AI 서비스입니다. Document Intelligence 를 독립적으로 사용할 때는 이 방식을 선택합니다. **만약 AI Search 와 직접 연동하여 사용할 경우, Azure AI 서비스 (Multi-services) 를 생성합니다.**
+
+### 단계별 가이드
+
+1. **Document Intelligence 메뉴 이동**
+   - 상단 검색창에 "Document Intelligence" 입력
+   - "Document Intelligence" 클릭
+
+<kbd>
+<img src="./images/01-11-doc-intel-search.png" alt="Document Intelligence 검색">
+</kbd>
+
+2. **새 Document Intelligence 생성**
+   - `+ Create` 버튼 클릭
+
+3. **기본 정보 입력**
+
+   | 필드 | 값 | 설명 |
+   |------|-----|------|
+   | Subscription | 본인 구독 선택 | |
+   | Resource group | `rg-doc-intelligence-lab` | |
+   | Region | `East US` | 혹은 `North Central US` AI Search 와 동일 지역으로 합니다 |
+   | Name | `doc-intel-lab-[고유번호]` | 전역적으로 고유해야 함 |
+   | Pricing tier | `Standard S0` | Standard 권장 |
+
+<kbd>
+<img src="./images/01-12-doc-intel-settings.png" alt="Document Intelligence 설정">
+</kbd>
+
+4. **네트워크 설정 (Networking 탭)**
+   - `All networks, including the internet, can access this resource` 선택
+
+<kbd>
+<img src="./images/01-13-doc-intel-network.png" alt="Document Intelligence 네트워크 설정">
+</kbd>
+
+5. **검토 및 생성**
+   - `Review + create` 클릭
+   - 검증 통과 후 `Create` 클릭
+   - 배포 완료까지 약 1-2분 소요
+
+<kbd>
+<img src="./images/01-14-doc-intel-created.png" alt="Document Intelligence 생성 완료">
 </kbd>
 
 ---
