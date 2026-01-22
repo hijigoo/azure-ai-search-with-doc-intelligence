@@ -124,23 +124,29 @@ AI Search가 Blob Storage의 문서를 읽고, Knowledge Store에 데이터를 �
 
 AI Search가 Document Intelligence를 사용할 수 있도록 역할을 할당합니다.
 
+
 ### 단계별 가이드
 
 1. **Document Intelligence 리소스로 이동**
-   - Resource Group 으로 이동 후 앞서 생성한 Resource Group 을 클릭
-   - Document Intelligence 리소스를 선택
-   
-<kbd>
-<img src="./images/02-06-01-doc-intel.png" alt="Document Intelligence 역할 선택">
-</kbd>
+   1. (방법1) **Azure Portal의 Resources 에서 Azure AI services multi-serivce account 리소스로 이동**
+    
+   <kbd>
+   <img src="./images/03-03-00-azure-ai-services-link.png" alt="Studio 링크">
+   </kbd>
 
-<kbd>
-<img src="./images/02-06-02-doc-intel.png" alt="Document Intelligence 역할 선택">
-</kbd>
+   2. (방법2)  **Resource Group 으로 이동 후 앞서 생성한 Document Intelligence 리소스를 선택**
 
-<kbd>
-<img src="./images/02-06-03-doc-intel.png" alt="Document Intelligence 역할 선택">
-</kbd>
+   <kbd>
+   <img src="./images/02-06-01-doc-intel.png" alt="Document Intelligence 역할 선택">
+   </kbd>
+
+   <kbd>
+   <img src="./images/02-06-02-doc-intel.png" alt="Document Intelligence 역할 선택">
+   </kbd>
+
+   <kbd>
+   <img src="./images/02-06-03-doc-intel.png" alt="Document Intelligence 역할 선택">
+   </kbd>
 
 
 1. **Access Control (IAM) 메뉴 이동**
@@ -222,7 +228,7 @@ AI Search가 Microsoft Foundry의 GPT-4o 및 text-embedding-3-large 모델을 �
 
 ---
 
-## 6. 사용자 계정 권한 설정
+## 6. (Skip) 사용자 계정 권한 설정
 
 로컬 개발 환경에서 직접 API를 테스트하려면 본인 계정에도 권한이 필요합니다.
 

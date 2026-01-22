@@ -55,7 +55,7 @@ Azure Document Intelligence는 AI 기반 문서 처리 서비스로, 다양한 �
 
 ## 3. Document Intelligence Studio 접속
 
-### 3.1 Document Intelligence 리소스로 이동
+### 3.1 (Skip) Document Intelligence 리소스로 이동
 
 1. **Azure Portal에서 Document Intelligence 리소스로 이동**
 2. **Overview 페이지에서 `Go to Document Intelligence Studio` 링크 클릭**
