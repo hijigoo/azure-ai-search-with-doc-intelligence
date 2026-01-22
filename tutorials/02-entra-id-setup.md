@@ -239,13 +239,13 @@ AI Search가 Microsoft Foundry의 GPT-4o 및 text-embedding-3-large 모델을 �
 
 ## 7. 역할 할당 요약
 
-| 리소스 | 할당된 역할 | 대상 |
-|--------|------------|------|
-| Storage Account | Storage Blob Data Contributor | AI Search |
-| Document Intelligence | Cognitive Services User | AI Search |
-| Microsoft Foundry | Cognitive Services OpenAI User | AI Search |
-| Document Intelligence | Cognitive Services User | 사용자 계정 |
-| Microsoft Foundry | Cognitive Services OpenAI User | 사용자 계정 |
+| 리소스 | 할당된 역할 | 대상 | 용도 |
+|--------|------------|------|------|
+| Storage Account | Storage Blob Data Contributor | AI Search | AI Search → Blob Storage 문서 읽기/쓰기 |
+| Document Intelligence | Cognitive Services User | AI Search | AI Search → Document Intelligence 문서 분석 API 호출 |
+| Microsoft Foundry | Cognitive Services OpenAI User | AI Search | AI Search → GPT-4o/Embedding 모델 호출 |
+| Document Intelligence | Cognitive Services User | 사용자 계정 | 로컬 개발 환경 → Document Intelligence API 테스트 |
+| Microsoft Foundry | Cognitive Services OpenAI User | 사용자 계정 | 로컬 개발 환경 → OpenAI 모델 API 테스트 |
 
 > ⏱️ **참고**: 역할 할당이 적용되기까지 최대 5분 정도 소요될 수 있습니다.
 
