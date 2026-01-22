@@ -77,7 +77,7 @@
    - 검증 통과 후 `Create` 클릭
 
 <kbd>
-<img src="./images/01-04-resource-group-created_east_us2.png" alt="리소스 그룹 생성 완료">
+<img src="./images/01-04-resource-group-created_east_us.png" alt="리소스 그룹 생성 완료">
 </kbd>
 
 ---
@@ -269,10 +269,10 @@ Document Intelligence를 AI Search와 직접 연동하여 사용할 때는 Azure
    > 💡 **팁**: Multi-services 리소스는 Document Intelligence, Computer Vision, Language 등 여러 서비스를 하나의 키로 사용할 수 있어 관리가 편리합니다.
 
 <kbd>
-<img src="./images/01-14-01-create_azure_ai_east_us2.png" alt="Azure AI Services 기본 설정">
+<img src="./images/01-14-01-create_azure_ai_east_us.png" alt="Azure AI Services 기본 설정">
 </kbd>
 
-4. **네트워크 설정 (Networking 탭)**
+1. **네트워크 설정 (Networking 탭)**
    - `All networks, including the internet, can access this resource` 선택
    - 실습 환경에서는 모든 네트워크 접근 허용
 
@@ -335,12 +335,12 @@ AI Search는 전문 검색 서비스로, Document Intelligence와 연동하여 �
    | Pricing tier | `Free` | 혹은 `Basic` |
 
    > ⚠️ **주의**: Document Intelligence와 연동 기능은 현재 East US, West Europe, North Central US 리전에서만 지원합니다.
-   
+
    > ⚠️ **주의**: Free tier는 구독당 1개만 생성 가능합니다. 이미 있다면 `Basic` tier를 선택하세요.
 
 
 <kbd>
-<img src="./images/01-16-ai-search-basics_east_us2.png" alt="AI Search 기본 설정">
+<img src="./images/01-16-ai-search-basics_east_us.png" alt="AI Search 기본 설정">
 </kbd>
 
 1. **가격 책정 계층 선택**
@@ -395,13 +395,13 @@ Microsoft Foundry는 AI 모델을 배포하고 관리하는 통합 플랫폼입�
    |------|-----|------|
    | Subscription | 본인 구독 선택 | |
    | Resource group | `rg-doc-intelligence-lab` | 동일한 리소스 그룹 사용 |
-   | Region | `East US` | 모델 가용성 확인 필요 |
    | Name | `ms-foundry-lab-[고유번호]` | Foundry 이름 |
+   | Region | `East US` | 모델 가용성 확인 필요 |
 
    > 💡 **팁**: Region은 사용하려는 AI 모델(GPT-4o, text-embedding-3 등)이 지원되는 지역을 선택하세요.
 
 <kbd>
-<img src="./images/01-21-ms-foundry-basics.png" alt="Microsoft Foundry 기본 설정">
+<img src="./images/01-21-ms-foundry-basics_east_us.png" alt="Microsoft Foundry 기본 설정">
 </kbd>
 
 4. **검토 및 생성**
@@ -452,7 +452,7 @@ Microsoft Foundry는 AI 모델을 배포하고 관리하는 통합 플랫폼입�
    - `Deploy` 클릭
 
 <kbd>
-<img src="./images/01-30-ms-foundry-gpt4o-deploy.png" alt="GPT-4o 배포 설정">
+<img src="./images/01-30-ms-foundry-gpt4o-deploy_east_us.png" alt="GPT-4o 배포 설정">
 </kbd>
 
 4. **text-embedding-3-large 모델 배포** (벡터 생성용)
@@ -468,7 +468,7 @@ Microsoft Foundry는 AI 모델을 배포하고 관리하는 통합 플랫폼입�
    - `Deploy` 클릭
 
 <kbd>
-<img src="./images/01-31-ms-foundry-embedding-deploy_east_us2.png" alt="Embedding 모델 배포 설정">
+<img src="./images/01-31-ms-foundry-embedding-deploy_east_us.png" alt="Embedding 모델 배포 설정">
 </kbd>
 
 5. **배포 완료 확인**
