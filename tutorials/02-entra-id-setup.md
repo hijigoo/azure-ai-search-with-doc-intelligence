@@ -59,10 +59,6 @@ AI Search가 다른 Azure 리소스에 안전하게 접근할 수 있도록 Syst
 <img src="./images/02-01-ai-search-identity.png" alt="AI Search Identity 설정">
 </kbd>
 
-5. **Object ID 메모** (역할 할당 시 사용)
-
-   > 💡 **참고**: Save 후 Object ID가 생성됩니다. 이 ID가 AI Search의 고유 식별자입니다.
-
 ---
 
 ## 3. Storage Account에 역할 할당
@@ -100,19 +96,20 @@ AI Search가 Blob Storage의 문서를 읽고, Knowledge Store에 데이터를 �
 </kbd>
 
 5. **Members 탭에서 멤버 추가**
+    - User 계정 추가
+      - `Assign access to`: **User, group, or service principal** 선택
+      - `+ Select members` 클릭
+      - 본인 계정 검색 및 선택
+      - `Select` 클릭
     - AI Search 추가
       - `Assign access to`: **Managed identity** 선택
       - `+ Select members` 클릭
       - `Managed identity` 드롭다운에서 **Search service** 선택
       - 앞서 생성한 AI Search 서비스 선택 (search-doc-lab-[고유번호])
       - `Select` 클릭
-    - User 계정 추가
-      - `Assign access to`: **User, group, or service principal** 선택
-      - `+ Select members` 클릭
-      - 본인 계정 검색 및 선택
-      - `Select` 클릭
-    
-    <kbd>
+
+
+<kbd>
 <img src="./images/02-05-storage-member-select.png" alt="Storage 멤버 선택">
 </kbd>
 

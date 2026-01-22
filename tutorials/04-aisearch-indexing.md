@@ -70,7 +70,7 @@ Azure AI Search의 **Import data (new)** 는 인덱싱 설정을 간소화한 �
    > ⚠️ **주의**: `Import data`가 아닌 **`Import data (new)`** 를 선택하세요.
 
 <kbd>
-<img src="./images/04-02-import-data-new-button.png" alt="Import data new">
+<img src="./images/04-02-import-data-new-button_east_us.png" alt="Import data new">
 </kbd>
 
 2. **Data Source 선택**
@@ -155,7 +155,7 @@ Azure AI Foundry 를 사용하여 이미지에서 캡션을 생성하고 텍스�
    | Kind | Azure AI Foundry (Preview) | 모델 제공 서비스 |
    | Subscription | 본인 구독 | Azure 구독 |
    | Azure AI Foundry/Hub project | `project-default (ms-foundry-lab-[고유번호])` | Microsoft Foundry 프로젝트 |
-   | Model deployment | `gpt-40` | 멀티모달 모델 |
+   | Model deployment | `gpt-4o` | 멀티모달 모델 |
 
 <kbd>
 <img src="./images/04-06-image-verbalization.png" alt="Azure AI Foundry 설정">
@@ -268,7 +268,7 @@ Import data (new)가 자동으로 생성하는 리소스:
 
 ### 11.3 인덱스 검색 테스트
 
-1. **AI Search > Search explorer 메뉴 클릭**
+1. **Overview > Search explorer 메뉴 클릭** 혹은 **Indexes >생성된 Index 클릭**
 2. **간단한 검색 쿼리 테스트**:
    검색어: `sustainability`
 

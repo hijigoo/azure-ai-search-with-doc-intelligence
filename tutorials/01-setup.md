@@ -238,76 +238,7 @@ Document Intelligence 는 문서에서 텍스트, 테이블, 구조 등을 추�
 
 ---
 
-## 5. Azure Document Intelligence 생성 - Azure AI Services (Multi-services)
-
-Document Intelligence를 AI Search와 직접 연동하여 사용할 때는 Azure AI Services (Multi-services)를 생성합니다. Multi-services 리소스는 Document Intelligence를 포함한 여러 Azure AI 서비스를 하나의 엔드포인트와 키로 통합 관리할 수 있습니다.
-
-### 단계별 가이드
-
-1. **Azure AI Services 메뉴 이동**
-   - 상단 검색창에 "Azure AI services" 입력
-   - "Azure AI services" 클릭
-
-<kbd>
-<img src="./images/01-14-00-create_azure_ai_search.png" alt="Azure AI Services 검색">
-</kbd>
-
-2. **새 Azure AI Services 생성**
-   - `+ Create` 버튼 클릭
-   - "Azure AI services multi-service account" 선택
-
-3. **기본 정보 입력 (Basics 탭)**
-
-   | 필드 | 값 | 설명 |
-   |------|-----|------|
-   | Subscription | 본인 구독 선택 | |
-   | Resource group | `rg-doc-intelligence-lab` | 앞서 생성한 리소스 그룹 |
-   | Region | `East US` | AI Search와 동일 지역 권장 |
-   | Name | `ai-services-lab-[고유번호]` | 전역적으로 고유해야 함 |
-   | Pricing tier | `Standard S0` | 표준 요금제 |
-
-   > 💡 **팁**: Multi-services 리소스는 Document Intelligence, Computer Vision, Language 등 여러 서비스를 하나의 키로 사용할 수 있어 관리가 편리합니다.
-
-<kbd>
-<img src="./images/01-14-01-create_azure_ai_east_us.png" alt="Azure AI Services 기본 설정">
-</kbd>
-
-1. **네트워크 설정 (Networking 탭)**
-   - `All networks, including the internet, can access this resource` 선택
-   - 실습 환경에서는 모든 네트워크 접근 허용
-
-<kbd>
-<img src="./images/01-14-02-create_azure_ai_network.png" alt="Azure AI Services 네트워크 설정">
-</kbd>
-
-5. **ID 설정 (Identity 탭)**
-   - System assigned managed identity: `On` 선택
-   - Managed Identity를 활성화하면 다른 Azure 리소스와 안전하게 연동 가능
-
-<kbd>
-<img src="./images/01-14-03-create_azure_ai_identity.png" alt="Azure AI Services ID 설정">
-</kbd>
-
-6. **검토 및 생성**
-   - `Review + create` 클릭
-   - 검증 통과 후 `Create` 클릭
-   - 배포 완료까지 약 1-2분 소요
-
-<kbd>
-<img src="./images/01-14-04-create_azure_ai_done.png" alt="Azure AI Services 생성 완료">
-</kbd>
-
-### Document Intelligence vs Multi-services 비교
-
-| 항목 | Document Intelligence (단독) | Azure AI Services (Multi-services) |
-|------|------------------------------|-----------------------------------|
-| 용도 | Document Intelligence만 사용 | 여러 AI 서비스 통합 사용 |
-| AI Search 연동 | 별도 설정 필요 | 직접 연동 지원 |
-| 관리 | 개별 키/엔드포인트 관리 | 통합 키/엔드포인트 관리 |
-
----
-
-## 6. Azure AI Search 생성
+## 5. Azure AI Search 생성
 
 AI Search는 전문 검색 서비스로, Document Intelligence와 연동하여 문서 검색을 제공합니다.
 
@@ -331,8 +262,13 @@ AI Search는 전문 검색 서비스로, Document Intelligence와 연동하여 �
    | Subscription | 본인 구독 선택 | |
    | Resource group | `rg-doc-intelligence-lab` | |
    | Service name | `search-doc-lab-[고유번호]` | 전역적으로 고유해야 함 |
-   | Location | `East US` | |
+   | Location | `East US` | 혹은 `North Central US` |
    | Pricing tier | `Free` | 혹은 `Basic` |
+
+   | Tier | 특징 |
+   |------|------|
+   | Free | 50MB 스토리지, 10,000 문서, 인덱스 3개 |
+   | Basic | 2GB 스토리지, 1백만 문서, 인덱스 15개 |
 
    > ⚠️ **주의**: Document Intelligence와 연동 기능은 현재 East US, West Europe, North Central US 리전에서만 지원합니다.
 
@@ -343,7 +279,7 @@ AI Search는 전문 검색 서비스로, Document Intelligence와 연동하여 �
 <img src="./images/01-16-ai-search-basics_east_us.png" alt="AI Search 기본 설정">
 </kbd>
 
-1. **가격 책정 계층 선택**
+<!-- 1. **가격 책정 계층 선택**
    - `Change Pricing Tier` 클릭하여 `Free` 선택
    
    | Tier | 특징 |
@@ -353,9 +289,9 @@ AI Search는 전문 검색 서비스로, Document Intelligence와 연동하여 �
 
 <kbd>
 <img src="./images/01-17-ai-search-pricing.png" alt="AI Search 가격 설정">
-</kbd>
+</kbd> -->
 
-5. **검토 및 생성**
+1. **검토 및 생성**
    - `Review + create` 클릭
    - 검증 통과 후 `Create` 클릭
    - 배포 완료까지 약 2-5분 소요
@@ -365,6 +301,76 @@ AI Search는 전문 검색 서비스로, Document Intelligence와 연동하여 �
 </kbd>
 
 ---
+
+## 6. Azure Document Intelligence 생성 - Azure AI Services (Multi-services)
+
+Document Intelligence를 AI Search와 직접 연동하여 사용할 때는 Azure AI Services (Multi-services)를 생성합니다. Multi-services 리소스는 Document Intelligence를 포함한 여러 Azure AI 서비스를 하나의 엔드포인트와 키로 통합 관리할 수 있습니다.
+
+### 단계별 가이드
+
+1. **Azure AI Services 메뉴 이동**
+   - 상단 검색창에 "Azure AI services" 입력
+   - "Azure AI services" 클릭
+
+<kbd>
+<img src="./images/01-14-00-create_azure_ai_search.png" alt="Azure AI Services 검색">
+</kbd>
+
+2. **새 Azure AI Services 생성**
+   - `+ Create` 버튼 클릭
+   - "Azure AI services multi-service account" 선택
+
+3. **기본 정보 입력 (Basics 탭)**
+
+   | 필드 | 값 | 설명 |
+   |------|-----|------|
+   | Subscription | 본인 구독 선택 | |
+   | Resource group | `rg-doc-intelligence-lab` | 앞서 생성한 리소스 그룹 |
+   | Region | `East US` | 혹은 `North Central US` AI Search 와 동일 지역으로 합니다 |
+   | Name | `ai-services-lab-[고유번호]` | 전역적으로 고유해야 함 |
+   | Pricing tier | `Standard S0` | 표준 요금제 |
+
+   > 💡 **팁**: Multi-services 리소스는 Document Intelligence, Computer Vision, Language 등 여러 서비스를 하나의 키로 사용할 수 있어 관리가 편리합니다.
+
+<kbd>
+<img src="./images/01-14-01-create_azure_ai_east_us.png" alt="Azure AI Services 기본 설정">
+</kbd>
+
+<!-- 1. **네트워크 설정 (Networking 탭)**
+   - `All networks, including the internet, can access this resource` 선택
+   - 실습 환경에서는 모든 네트워크 접근 허용
+
+<kbd>
+<img src="./images/01-14-02-create_azure_ai_network.png" alt="Azure AI Services 네트워크 설정">
+</kbd>
+
+1. **ID 설정 (Identity 탭)**
+   - System assigned managed identity: `On` 선택
+   - Managed Identity를 활성화하면 다른 Azure 리소스와 안전하게 연동 가능
+
+<kbd>
+<img src="./images/01-14-03-create_azure_ai_identity.png" alt="Azure AI Services ID 설정">
+</kbd> -->
+
+4. **검토 및 생성**
+   - `Review + create` 클릭
+   - 검증 통과 후 `Create` 클릭
+   - 배포 완료까지 약 1-2분 소요
+
+<kbd>
+<img src="./images/01-14-04-create_azure_ai_done.png" alt="Azure AI Services 생성 완료">
+</kbd>
+
+### Document Intelligence vs Multi-services 비교
+
+| 항목 | Document Intelligence (단독) | Azure AI Services (Multi-services) |
+|------|------------------------------|-----------------------------------|
+| 용도 | Document Intelligence만 사용 | 여러 AI 서비스 통합 사용 |
+| AI Search 연동 | 별도 설정 필요 | 직접 연동 지원 |
+| 관리 | 개별 키/엔드포인트 관리 | 통합 키/엔드포인트 관리 |
+
+---
+
 
 ## 7. Microsoft Foundry 생성
 
