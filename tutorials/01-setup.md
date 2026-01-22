@@ -309,7 +309,7 @@ Document Intelligence를 AI Search와 직접 연동하여 사용할 때는 Azure
 
 ## 6. Azure AI Search 생성
 
-AI Search(구 Cognitive Search)는 전문 검색 서비스로, Document Intelligence와 연동하여 문서 검색을 제공합니다.
+AI Search는 전문 검색 서비스로, Document Intelligence와 연동하여 문서 검색을 제공합니다.
 
 ### 단계별 가이드
 
@@ -334,13 +334,16 @@ AI Search(구 Cognitive Search)는 전문 검색 서비스로, Document Intellig
    | Location | `East US` | |
    | Pricing tier | `Free` | 혹은 `Basic` |
 
+   > ⚠️ **주의**: Document Intelligence와 연동 기능은 현재 East US, West Europe, North Central US 리전에서만 지원합니다.
+   
    > ⚠️ **주의**: Free tier는 구독당 1개만 생성 가능합니다. 이미 있다면 `Basic` tier를 선택하세요.
+
 
 <kbd>
 <img src="./images/01-16-ai-search-basics_east_us2.png" alt="AI Search 기본 설정">
 </kbd>
 
-4. **가격 책정 계층 선택**
+1. **가격 책정 계층 선택**
    - `Change Pricing Tier` 클릭하여 `Free` 선택
    
    | Tier | 특징 |
