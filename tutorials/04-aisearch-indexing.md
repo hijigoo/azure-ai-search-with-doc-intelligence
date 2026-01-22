@@ -44,6 +44,7 @@ Azure AI Search의 **Import data (new)** 는 인덱싱 설정을 간소화한 �
 
    - 샘플 파일 업로드:
      - Azure Portal에서 앞서 생성한 Storage Account (`stdocintellab[고유번호]`)로 이동
+      - 왼쪽 메뉴에서 `Data Storage` 에서 `Containers` 클릭
       - `documents` 컨테이너 클릭
       - `Upload` 버튼 클릭
       - `파일 선택` 클릭하여 샘플 PDF 파일 업로드 
