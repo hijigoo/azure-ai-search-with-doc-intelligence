@@ -512,7 +512,7 @@ Microsoft Foundry는 AI 모델을 배포하고 관리하는 통합 플랫폼입�
 
 - [ ] Resource Group 생성 완료
 - [ ] Storage Account 생성 완료
-- [ ] Blob Container (`documents`) 생성 완료
+- [ ] Blob Container (`documents`), (`output`) 생성 완료
 - [ ] Document Intelligence 생성 완료
 - [ ] AI Search 생성 완료
 - [ ] Microsoft Foundry Hub 및 Project 생성 완료
