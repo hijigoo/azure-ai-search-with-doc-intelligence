@@ -222,7 +222,7 @@ AI Search는 전문 검색 서비스로, Document Intelligence와 연동하여 �
    | Basic | 2GB 스토리지, 1백만 문서, 인덱스 15개 |
 
    > ⚠️ **주의**: Document Intelligence와 연동 기능은 현재 East US, West Europe, North Central US 리전에서만 지원합니다.
-   >[참고 링크](https://learn.microsoft.com/en-us/azure/search/cognitive-search-skill-document-intelligence-layout#supported-regions).
+   > ⚠️ [참고 링크](https://learn.microsoft.com/en-us/azure/search/cognitive-search-skill-document-intelligence-layout#supported-regions).
    
    > ⚠️ **주의**: Free tier는 구독당 1개만 생성 가능합니다. 이미 있다면 `Basic` tier를 선택하세요.
 
