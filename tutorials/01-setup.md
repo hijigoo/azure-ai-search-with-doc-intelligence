@@ -254,7 +254,7 @@ AI Search는 전문 검색 서비스로, Document Intelligence와 연동하여 �
 
 ---
 
-## 5. (Skip, 6번 진행) Azure Document Intelligence 생성
+## 5. (1월 23일 핸즈온 세션에서는 스킵하시고 바로 6번 진행) Azure Document Intelligence 생성
 
 Document Intelligence 는 문서에서 텍스트, 테이블, 구조 등을 추출하는 AI 서비스입니다. Document Intelligence 를 독립적으로 사용할 때는 이 방식을 선택합니다. **만약 AI Search 와 직접 연동하여 사용할 경우, Azure AI 서비스 (Multi-services) 를 생성합니다.**
 
@@ -317,11 +317,8 @@ Document Intelligence를 AI Search와 직접 연동하여 사용할 때는 Azure
 <img src="./images/01-14-00-create_azure_ai_search.png" alt="Azure AI Services 검색">
 </kbd>
 
-2. **새 Azure AI Services 생성**
-   - `+ Create` 버튼 클릭
-   - "Azure AI services multi-service account" 선택
 
-3. **기본 정보 입력 (Basics 탭)**
+2. **기본 정보 입력 (Basics 탭)**
 
    | 필드 | 값 | 설명 |
    |------|-----|------|
@@ -353,7 +350,7 @@ Document Intelligence를 AI Search와 직접 연동하여 사용할 때는 Azure
 <img src="./images/01-14-03-create_azure_ai_identity.png" alt="Azure AI Services ID 설정">
 </kbd> -->
 
-4. **검토 및 생성**
+3. **검토 및 생성**
    - `Review + create` 클릭
    - 검증 통과 후 `Create` 클릭
    - 배포 완료까지 약 1-2분 소요
