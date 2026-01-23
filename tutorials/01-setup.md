@@ -109,7 +109,7 @@ Blob Storage는 문서 파일을 저장하는 데 사용됩니다.
    | Region | `East US` | 리소스 그룹과 동일 지역 |
    | Primary service | `Azure Blob Storage or Azure Data Lake Storage Gen2` | 문서 저장용 Blob 선택 |
    | Performance | `Standard` | 실습용으로 충분 |
-   | Redundancy | `LRS` (Locally-redundant storage) | 비용 절ㅌ약을 위해 선택 |
+   | Redundancy | `LRS` (Locally-redundant storage) | 비용 절약을 위해 선택 |
 
    > ⚠️ **주의**: Storage account name은 Azure 전체에서 고유해야 합니다. 본인의 이니셜이나 날짜를 추가하세요. (예: `stdocintellab0115`)
 
