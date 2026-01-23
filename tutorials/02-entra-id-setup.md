@@ -125,13 +125,13 @@ AI Search가 Document Intelligence를 사용할 수 있도록 역할을 할당�
 ### 단계별 가이드
 
 1. **Document Intelligence 리소스로 이동**
-   1. (방법1) **Azure Portal의 Resources 에서 Azure AI services multi-serivce account 리소스로 이동**
+   1. (1월 23일 실습) **Azure Portal의 Resources 에서 Azure AI services multi-serivce account 리소스로 이동**
     
    <kbd>
    <img src="./images/03-03-00-azure-ai-services-link.png" alt="Studio 링크">
    </kbd>
 
-   2. (방법2)  **Resource Group 으로 이동 후 앞서 생성한 Document Intelligence 리소스를 선택**
+   2. (1월 23일 실습 진행시 스킵)  **Resource Group 으로 이동 후 앞서 생성한 Document Intelligence 리소스를 선택**
 
    <kbd>
    <img src="./images/02-06-01-doc-intel.png" alt="Document Intelligence 역할 선택">
