@@ -189,7 +189,9 @@ AI Search가 Microsoft Foundry의 GPT-4o 및 text-embedding-3-large 모델을 �
 ### 단계별 가이드
 
 1. **Microsoft Foundry 리소스로 이동**
-   - Azure Portal에서 앞서 생성한 Microsoft Foundry로 이동
+   - Azure Portal에서 검색창에 Microsoft Foundry 검색 후 이동
+   - 왼쪽 메뉴 탭에서 Use with Foundry - Foundry 클릭
+   - 앞서 생성했던 Foundry 리소스 클릭
 
 2. **Access Control (IAM) 메뉴 이동**
    - 왼쪽 메뉴에서 `Access Control (IAM)` 클릭
