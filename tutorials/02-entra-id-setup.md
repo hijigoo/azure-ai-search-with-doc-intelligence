@@ -125,13 +125,13 @@ AI Search가 Document Intelligence를 사용할 수 있도록 역할을 할당�
 ### 단계별 가이드
 
 1. **Document Intelligence 리소스로 이동**
-   1. (방법1) **Azure Portal의 Resources 에서 Azure AI services multi-serivce account 리소스로 이동**
+   1. (1월 23일 실습) **Azure Portal의 Resources 에서 Azure AI services multi-serivce account 리소스로 이동**
     
    <kbd>
    <img src="./images/03-03-00-azure-ai-services-link.png" alt="Studio 링크">
    </kbd>
 
-   2. (방법2)  **Resource Group 으로 이동 후 앞서 생성한 Document Intelligence 리소스를 선택**
+   2. (1월 23일 실습 진행시 스킵)  **Resource Group 으로 이동 후 앞서 생성한 Document Intelligence 리소스를 선택**
 
    <kbd>
    <img src="./images/02-06-01-doc-intel.png" alt="Document Intelligence 역할 선택">
@@ -189,7 +189,9 @@ AI Search가 Microsoft Foundry의 GPT-4o 및 text-embedding-3-large 모델을 �
 ### 단계별 가이드
 
 1. **Microsoft Foundry 리소스로 이동**
-   - Azure Portal에서 앞서 생성한 Microsoft Foundry로 이동
+   - Azure Portal에서 검색창에 Microsoft Foundry 검색 후 이동
+   - 왼쪽 메뉴 탭에서 Use with Foundry - Foundry 클릭
+   - 앞서 생성했던 Foundry 리소스 클릭
 
 2. **Access Control (IAM) 메뉴 이동**
    - 왼쪽 메뉴에서 `Access Control (IAM)` 클릭
