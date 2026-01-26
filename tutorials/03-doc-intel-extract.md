@@ -46,7 +46,6 @@ Azure Document Intelligence는 AI 기반 문서 처리 서비스로, 다양한 �
 실습을 위해 샘플 PDF 문서를 준비합니다.
 
 **샘플 파일 다운로드**:
-- [Health Plan 문서](https://github.com/Azure-Samples/azure-search-sample-data/tree/main/health-plan)
 - [Accelerating Sustainability with AI PDF](https://github.com/Azure-Samples/azure-search-sample-data/blob/main/sustainable-ai-pdf/Accelerating-Sustainability-with-AI-2025.pdf)
 
 > 💡 **팁**: 본인의 PDF 문서를 사용해도 됩니다.

@@ -37,7 +37,6 @@ Azure AI Search의 **Import data (new)** 는 인덱싱 설정을 간소화한 �
 ### 3.1 **문서 업로드**
   
    - 샘플 파일 다운로드:
-     - [Health Plan 문서](https://github.com/Azure-Samples/azure-search-sample-data/tree/main/health-plan)
      - [Accelerating Sustainability with AI PDF](https://github.com/Azure-Samples/azure-search-sample-data/blob/main/sustainable-ai-pdf/Accelerating-Sustainability-with-AI-2025.pdf)
 
         > 💡 **팁**: 본인의 PDF 문서를 사용해도 됩니다.
