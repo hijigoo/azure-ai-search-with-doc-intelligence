@@ -125,34 +125,35 @@ AI Search가 Document Intelligence를 사용할 수 있도록 역할을 할당�
 ### 단계별 가이드
 
 1. **Document Intelligence 리소스로 이동**
-   1. (1월 23일 실습) **Azure Portal의 Resources 에서 Azure AI services multi-serivce account 리소스로 이동**
+   
+   1. (Skip, 2번 진행)  **Resource Group 으로 이동 후 앞서 생성한 Document Intelligence 리소스를 선택**
+
+      <kbd>
+      <img src="./images/02-06-01-doc-intel.png" alt="Document Intelligence 역할 선택">
+      </kbd>
+
+      <kbd>
+      <img src="./images/02-06-02-doc-intel.png" alt="Document Intelligence 역할 선택">
+      </kbd>
+
+      <kbd>
+      <img src="./images/02-06-03-doc-intel.png" alt="Document Intelligence 역할 선택">
+      </kbd>
+
+
+   2. **Azure Portal의 Resources 에서 Azure AI services multi-serivce account 리소스로 이동**
     
-   <kbd>
-   <img src="./images/03-03-00-azure-ai-services-link.png" alt="Studio 링크">
-   </kbd>
+      <kbd>
+      <img src="./images/03-03-00-azure-ai-services-link.png" alt="Studio 링크">
+      </kbd>
 
-   2. (1월 23일 실습 진행시 스킵)  **Resource Group 으로 이동 후 앞서 생성한 Document Intelligence 리소스를 선택**
-
-   <kbd>
-   <img src="./images/02-06-01-doc-intel.png" alt="Document Intelligence 역할 선택">
-   </kbd>
-
-   <kbd>
-   <img src="./images/02-06-02-doc-intel.png" alt="Document Intelligence 역할 선택">
-   </kbd>
-
-   <kbd>
-   <img src="./images/02-06-03-doc-intel.png" alt="Document Intelligence 역할 선택">
-   </kbd>
-
-
-1. **Access Control (IAM) 메뉴 이동**
+2. **Access Control (IAM) 메뉴 이동**
    - 왼쪽 메뉴에서 `Access Control (IAM)` 클릭
 
-2. **역할 할당 추가**
+3. **역할 할당 추가**
    - `+ Add` > `Add role assignment` 클릭
 
-3. **Role 탭에서 역할 선택**
+4. **Role 탭에서 역할 선택**
    - 검색창에 "Cognitive Services User" 입력
    - `Cognitive Services User` 선택
    - `Next` 클릭
@@ -161,9 +162,9 @@ AI Search가 Document Intelligence를 사용할 수 있도록 역할을 할당�
    |------|------|
    | Cognitive Services User | API 호출 권한 |
 
-<kbd>
-<img src="./images/02-07-doc-intel-role-select.png" alt="Document Intelligence 역할 선택">
-</kbd>
+   <kbd>
+   <img src="./images/02-07-doc-intel-role-select.png" alt="Document Intelligence 역할 선택">
+   </kbd>
 
 5. **Members 탭에서 AI Search 추가**
    - `Assign access to`: **Managed identity** 선택
@@ -172,9 +173,9 @@ AI Search가 Document Intelligence를 사용할 수 있도록 역할을 할당�
    - 앞서 생성한 AI Search 서비스 선택
    - `Select` 클릭
 
-<kbd>
-<img src="./images/02-08-doc-intel-member-select.png" alt="Document Intelligence 멤버 선택">
-</kbd>
+   <kbd>
+   <img src="./images/02-08-doc-intel-member-select.png" alt="Document Intelligence 멤버 선택">
+   </kbd>
 
 6. **Review + assign 클릭하여 역할 할당 완료**
 
@@ -208,9 +209,9 @@ AI Search가 Microsoft Foundry의 GPT-4o 및 text-embedding-3-large 모델을 �
    |------|------|
    | Cognitive Services OpenAI User | 모델 배포 읽기 및 추론 작업 |
 
-<kbd>
-<img src="./images/02-11-foundry-role-select.png" alt="Foundry 역할 선택">
-</kbd>
+   <kbd>
+   <img src="./images/02-11-foundry-role-select.png" alt="Foundry 역할 선택">
+   </kbd>
 
 5. **Members 탭에서 멤버 추가**
    - `Assign access to`: **Managed identity** 선택
@@ -219,9 +220,9 @@ AI Search가 Microsoft Foundry의 GPT-4o 및 text-embedding-3-large 모델을 �
    - 앞서 생성한 AI Search 서비스 선택
    - `Select` 클릭
 
-<kbd>
-<img src="./images/02-12-foundry-member-select.png" alt="Foundry 멤버 선택">
-</kbd>
+   <kbd>
+   <img src="./images/02-12-foundry-member-select.png" alt="Foundry 멤버 선택">
+   </kbd>
 
 6. **Review + assign 클릭하여 역할 할당 완료**
 
