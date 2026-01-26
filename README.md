@@ -6,6 +6,10 @@ Azure Document Intelligence와 Azure AI Search를 활용한 문서 처리 및 �
 
 이 프로젝트는 Azure의 AI 서비스를 활용하여 PDF, PPTX 등의 문서에서 콘텐츠를 추출하고, Azure AI Search의 Knowledge Base를 통해 에이전틱 검색(Agentic Retrieval)을 수행하는 방법을 다룹니다.
 
+### 🏗️ 아키텍처 오버뷰
+
+![Architecture Overview](tutorials/images/architecture-overview.png)
+
 ### 주요 기능
 - **Document Intelligence**: PDF/PPTX 문서에서 텍스트, 테이블, 이미지 추출
 - **Layout 분석**: 문서 구조 분석 및 Markdown 변환
