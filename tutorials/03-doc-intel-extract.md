@@ -59,9 +59,9 @@ Azure Document Intelligence는 AI 기반 문서 처리 서비스로, 다양한 �
 1. **Azure Portal에서 Document Intelligence 리소스로 이동**
 2. **Overview 페이지에서 `Go to Document Intelligence Studio` 링크 클릭**
 
-<kbd>
-<img src="./images/03-03-doc-intel-studio-link.png" alt="Studio 링크">
-</kbd>
+    <kbd>
+    <img src="./images/03-03-doc-intel-studio-link.png" alt="Studio 링크">
+    </kbd>
 
 ---
 
@@ -71,37 +71,39 @@ Azure Document Intelligence는 AI 기반 문서 처리 서비스로, 다양한 �
 
 1. **Azure Portal의 Resources 에서 Azure AI services multi-serivce account 리소스로 이동**
 
-<kbd>
-<img src="./images/03-03-00-azure-ai-services-link.png" alt="Studio 링크">
-</kbd>
+    <kbd>
+    <img src="./images/03-03-00-azure-ai-services-link.png" alt="Studio 링크">
+    </kbd>
 
 2. **Overview 페이지에서 `Document Intelligence` 링크 클릭**
 
-<kbd>
-<img src="./images/03-03-01-azure-ai-services-di.png" alt="Studio 링크">
-</kbd>
+    <kbd>
+    <img src="./images/03-03-01-azure-ai-services-di.png" alt="Studio 링크">
+    </kbd>
 
 3. **`Document Intelligence Studio` 링크 클릭**
 
     <kbd>
-<img src="./images/03-03-02-azure-ai-services-di-studio.png" alt="Studio 링크">
-</kbd>
+    <img src="./images/03-03-02-azure-ai-services-di-studio.png" alt="Studio 링크">
+    </kbd>
 
 ---
 
 ## 5. 모델 선택 화면
 
 1. **Document Intelligence Studio가 새 탭에서 열림**
-2. **필요시 Azure 계정으로 로그인**
+2. **Start with Document Intelligence 클릭**
+   
+   (필요시 Azure 계정으로 로그인)
 3. **다양한 Document analysis 모델 목록이 표시됨**
    - OCR/Read
    - Layout
    - Prebuilt models (Invoice, Receipt 등)
    - Custom models
 
-<kbd>
-<img src="./images/03-04-studio-main.png" alt="Studio 메인">
-</kbd>
+    <kbd>
+    <img src="./images/03-04-studio-main.png" alt="Studio 메인">
+    </kbd>
 
 
 ## 6. OCR/Read 모델로 텍스트 추출
@@ -112,19 +114,22 @@ OCR/Read 모델은 순수 OCR 기능으로, 텍스트만 빠르게 추출할 때
 
 1. **Document Intelligence Studio 메인 화면에서 `OCR/Read` 선택**
 
-<kbd>
-<img src="./images/03-05-studio-read-select.png" alt="OCR/Read 선택">
-</kbd>
+    <kbd>
+    <img src="./images/03-05-studio-read-select.png" alt="OCR/Read 선택">
+    </kbd>
 
 (리소스를 찾을 수 없다는 메세지가 나오면 앞서 생성한 리소스를 연결합니다.)
 
-<kbd>
-<img src="./images/03-05-01-studio-resource.png" alt="OCR/Read 선택">
-</kbd>
+    <kbd>
+    <img src="./images/03-05-01-studio-resource.png" alt="OCR/Read 선택">
+    </kbd>
 
-<kbd>
-<img src="./images/03-05-02-studio-resource.png" alt="OCR/Read 선택">
-</kbd>
+    <kbd>
+    <img src="./images/03-05-02-studio-resource.png" alt="OCR/Read 선택">
+    </kbd>
+
+
+2. **앞서 생성한 리소스 그룹과 리소스를 선택한 후 `Finish` 클릭**
 
 
 ### 6.2 문서 업로드 및 분석
@@ -142,22 +147,22 @@ OCR/Read 모델은 순수 OCR 기능으로, 텍스트만 빠르게 추출할 때
    - **Optional detection**: Barcodes, Language
    - **Premium detection**: High resolution, Style font, Formulas
 
-<kbd>
-<img src="./images/03-06-studio-text_analysis_option.png" alt="Layout 선택">
-</kbd>
+    <kbd>
+    <img src="./images/03-06-studio-text_analysis_option.png" alt="Layout 선택">
+    </kbd>
 
 3. **`Run analysis` 버튼 클릭**
     <kbd>
-<img src="./images/03-06-studio-run-analysis.png" alt="Run analysis">
-</kbd>
+    <img src="./images/03-06-studio-run-analysis.png" alt="Run analysis">
+    </kbd>
 
 ### 6.3 OCR/Read 결과 확인
 
 1. **Content 탭에서 추출된 텍스트 확인**
 
-<kbd>
-<img src="./images/03-07-studio-read-analysis.png" alt="OCR/Read 결과">
-</kbd>
+    <kbd>
+    <img src="./images/03-07-studio-read-analysis.png" alt="OCR/Read 결과">
+    </kbd>
 
 > 💡 **참고**: OCR/Read 모델은 테이블이나 레이아웃 정보를 추출하지 않습니다. 텍스트만 필요한 경우 가장 빠른 옵션입니다.
 
@@ -171,9 +176,9 @@ Layout 모델은 문서의 텍스트, 테이블, 체크박스, 구조 정보를 
 
 1. **Document Intelligence Studio 메인 화면에서 `Layout` 선택**
 
-<kbd>
-<img src="./images/03-09-studio-layout-select.png" alt="Layout 선택">
-</kbd>
+    <kbd>
+    <img src="./images/03-09-studio-layout-select.png" alt="Layout 선택">
+    </kbd>
 
 ### 7.2 문서 업로드 및 분석
 
@@ -191,27 +196,28 @@ Layout 모델은 문서의 텍스트, 테이블, 체크박스, 구조 정보를 
    - **Optional detection**: Barcodes, Language, Key-value pairs
    - **Premium detection**: High resolution, Style font, Formulas
 
-<kbd>
-<img src="./images/03-09-studio-layout-option.png" alt="Layout 선택">
-</kbd>
+    <kbd>
+    <img src="./images/03-09-studio-layout-option.png" alt="Layout 선택">
+    </kbd>
 
 3. **`Run analysis` 버튼 클릭**
+   
     <kbd>
-<img src="./images/03-06-studio-run-analysis.png" alt="Run analysis">
-</kbd>
+    <img src="./images/03-06-studio-run-analysis.png" alt="Run analysis">
+    </kbd>
 
 ### 7.3 Layout 결과 확인
 1. **Content 탭에서 추출된 Markdown 확인**
 
     <kbd>
-<img src="./images/03-12-result-markdown.png" alt="마크다운 결과">
-</kbd>
+    <img src="./images/03-12-result-markdown.png" alt="마크다운 결과">
+    </kbd>
 
 2. **Content 탭에서 추출된 테이블 확인**
 
     <kbd>
-<img src="./images/03-13-result-tables.png" alt="테이블 결과">
-</kbd>
+    <img src="./images/03-13-result-tables.png" alt="테이블 결과">
+    </kbd>
 
 ---
 
