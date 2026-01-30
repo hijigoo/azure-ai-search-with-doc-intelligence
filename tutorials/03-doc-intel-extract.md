@@ -118,7 +118,7 @@ OCR/Read 모델은 순수 OCR 기능으로, 텍스트만 빠르게 추출할 때
     <img src="./images/03-05-studio-read-select.png" alt="OCR/Read 선택">
     </kbd>
 
-(리소스를 찾을 수 없다는 메세지가 나오면 앞서 생성한 리소스를 연결합니다.)
+    (리소스를 찾을 수 없다는 메세지가 나오면 앞서 생성한 리소스를 연결합니다.)
 
     <kbd>
     <img src="./images/03-05-01-studio-resource.png" alt="OCR/Read 선택">
